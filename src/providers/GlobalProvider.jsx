@@ -2,9 +2,9 @@ import AppLayout from "../layouts/AppLayout";
 
 function GlobalProvider() {
     return (
-        <div>
+        <>
             <AppLayout />
-        </div>
+        </>
     );
 }
 
