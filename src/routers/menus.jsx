@@ -1,4 +1,4 @@
-import { IoMdHome } from "react-icons/io";
+import { FiHome } from "react-icons/fi";
 import { CiCircleInfo } from "react-icons/ci";
 import { IoMdContacts } from "react-icons/io";
 
@@ -7,7 +7,7 @@ export default [
     {
         name: 'Home',
         path: '/',
-        icon: <IoMdHome />
+        icon: <FiHome />
     },
     {
         name: 'About',
