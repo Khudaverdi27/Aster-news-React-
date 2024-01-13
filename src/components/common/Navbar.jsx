@@ -10,42 +10,50 @@ import { MdNature } from "react-icons/md";
 import { GiTeamUpgrade } from "react-icons/gi";
 import { useFetchCategoryList } from "../../hooks/useFetch";
 import { useEffect } from "react";
+import classNames from "classnames";
 
 function Icon({ slug }) {
-    const icons = {
-        "world": <GiWorld />,
-        "politics": <FaFileContract />,
-        "sports": <MdOutlineSportsBasketball />,
-        "technology": <FaRobot />,
-        "economy": <GiTakeMyMoney />,
-        "entertainment": <SiAmazongames />,
-        "health": <MdHealthAndSafety />,
-        "science": <MdOutlineScience />,
-        "culture": <GiTeamUpgrade />,
-        "environment": <MdNature />
-    }
-    return (icons[slug]);
+  const icons = {
+    world: <GiWorld />,
+    politics: <FaFileContract />,
+    sports: <MdOutlineSportsBasketball />,
+    technology: <FaRobot />,
+    economy: <GiTakeMyMoney />,
+    entertainment: <SiAmazongames />,
+    health: <MdHealthAndSafety />,
+    science: <MdOutlineScience />,
+    culture: <GiTeamUpgrade />,
+    environment: <MdNature />,
+  };
+  return icons[slug];
 }
 
-
 function Navbar() {
-    const [categories, fetchCategories, loading] = useFetchCategoryList()
+  const [categories, fetchCategories, loading] = useFetchCategoryList();
 
-    useEffect(() => {
-        fetchCategories()
-    }, [])
-    return (
-        <div className="pr-[17px]">
-            {categories.map((category, index) => (
-                <a key={index} className="flex items-center text-amberBlack space-x-[22px]" href="#">
-                    <span className="text-[24px]">
-                        <Icon slug={category.slug} />
-                    </span>
-                    <span>{category.name}</span>
-                </a>
-            ))}
-        </div>
-    );
+  useEffect(() => {
+    fetchCategories();
+  }, []);
+  return (
+    <div className="pr-[17px]">
+      {categories.map((category, index) => (
+        <a
+          key={index}
+          className={classNames({
+            "flex items-center h-[50px] rounded-tr-full relative rounded-br-full pl-[33px] text-amberBlack space-x-[22px]": true,
+            "bg-[#e0f0f8] text-skyBlue font-bold after:content-[''] after:absolute after:left-[15px] after:size-2 after:rounded-full after:bg-skyBlue":
+              index == 0,
+          })}
+          href="#"
+        >
+          <span className="text-[24px]">
+            <Icon slug={category.slug} />
+          </span>
+          <span>{category.name}</span>
+        </a>
+      ))}
+    </div>
+  );
 }
 
 export default Navbar;
