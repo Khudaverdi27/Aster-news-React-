@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { ServiceCategoryFetchList } from "../services/category.service";
-import { ServiceNewsFetchRandomList } from "../services/news.service";
+import {
+  ServiceNewsFetchList,
+  ServiceNewsFetchRandomList,
+} from "../services/news.service";
 
 const useFetch = (state = false) => {
   const [data, setData] = useState(state);
@@ -31,6 +34,16 @@ export const useFetchRandomNewsList = () => {
 
   const apiFetch = async () => {
     fetch(ServiceNewsFetchRandomList, { limit: 6 });
+  };
+
+  return [data?.data || [], apiFetch, loading];
+};
+
+export const useFetchNewsList = () => {
+  const [data, fetch, loading] = useFetch([]);
+
+  const apiFetch = async () => {
+    fetch(ServiceNewsFetchList, { limit: 6 });
   };
 
   return [data?.data || [], apiFetch, loading];

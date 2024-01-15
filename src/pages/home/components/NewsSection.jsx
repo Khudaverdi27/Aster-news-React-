@@ -2,9 +2,9 @@ import NewsSkleton from "@/components/widgets/news/NewsSkleton";
 import NewsItem from "@/components/widgets/news/NewsItem";
 import Section from "@/components/ui/section";
 import { Col, Row } from "antd";
-function RandomNews({ items, loading }) {
+function NewsSection({ items, loading, title }) {
   return (
-    <Section title={"Ən çox oxunanlar"}>
+    <Section title={title}>
       <Row gutter={[16, 16]}>
         {items.map((item, index) => (
           <Col key={index} xs={{ span: 24 }} lg={{ span: 12 }}>
@@ -22,4 +22,4 @@ function RandomNews({ items, loading }) {
   );
 }
 
-export default RandomNews;
+export default NewsSection;

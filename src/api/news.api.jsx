@@ -1,5 +1,5 @@
 const NewsApi = {
-  list: "/news/",
+  list: "/news",
   showById: "/news/show/:id",
   showBySlug: "/news/slug/:id",
   random: "/news/random",
