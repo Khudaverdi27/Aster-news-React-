@@ -3,9 +3,8 @@ import Logo from "../components/common/Logo";
 import Navbar from "../components/common/Navbar";
 import RightAside from "../components/common/RighAside";
 import Subscription from "../components/widgets/subscription";
-import HomePage from "../pages/home";
 
-function AppLayout() {
+function AppLayout({ children }) {
   return (
     <main className="w-[1200px] mx-auto flex gap-x-[45px]">
       <div className="w-[260px] shrink-0 ">
@@ -16,9 +15,7 @@ function AppLayout() {
       <div className="flex-1">
         <Header />
         <div className="flex gap-x-[45px]">
-          <div className="flex-1">
-            <HomePage />
-          </div>
+          <div className="flex-1">{children}</div>
           <div className="w-[285px] shrink-0">
             <RightAside />
           </div>

@@ -3,6 +3,7 @@ import { FiUser } from "react-icons/fi";
 import { Input, Space } from "antd";
 import DropdownMenu from "../ui/dropdown";
 import menus from "../../routers/menus";
+import { NavLink } from "react-router-dom";
 
 const { Search } = Input;
 
@@ -19,12 +20,10 @@ function Header() {
         </div>
         <div className="flex items-center space-x-9 text-[17px]">
           {menus.map((menu, index) => (
-            <div key={index} className="flex items-center">
+            <NavLink to={menu.path} key={index} className="flex items-center">
               <span>{menu.icon}</span>
-              <a className="flex items-center px-1" href="#">
-                {menu.name}
-              </a>
-            </div>
+              <span className="flex items-center px-1">{menu.name}</span>
+            </NavLink>
           ))}
         </div>
       </div>

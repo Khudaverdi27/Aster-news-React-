@@ -11,6 +11,7 @@ import { GiTeamUpgrade } from "react-icons/gi";
 import { useFetchCategoryList } from "../../hooks/useFetch";
 import { useEffect } from "react";
 import classNames from "classnames";
+import { NavLink } from "react-router-dom";
 
 function Icon({ slug }) {
   const icons = {
@@ -37,7 +38,8 @@ function Navbar() {
   return (
     <div className="pr-[17px]">
       {categories.map((category, index) => (
-        <a
+        <NavLink
+          to={"/search/" + category.slug}
           key={index}
           className={classNames({
             "flex items-center h-[50px] rounded-tr-full relative rounded-br-full pl-[33px] text-amberBlack space-x-[22px]": true,
@@ -50,7 +52,7 @@ function Navbar() {
             <Icon slug={category.slug} />
           </span>
           <span>{category.name}</span>
-        </a>
+        </NavLink>
       ))}
     </div>
   );
