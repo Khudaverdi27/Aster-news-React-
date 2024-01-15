@@ -4,3 +4,6 @@
 .img-contain{
     @apply size-full object-contain
 }
+body{
+    @apply bg-[#F4F9F8]
+}

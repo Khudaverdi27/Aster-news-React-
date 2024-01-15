@@ -1,7 +1,18 @@
+import { useFetchRandomNewsList } from "../../hooks/useFetch";
+import { useEffect } from "react";
+import RandomNews from "./components/RandomNews";
+
 function HomePage() {
-    return (
-        <div>Home</div>
-    );
+  const [randomNews, fetcRandomNews, randomLoading] = useFetchRandomNewsList();
+  useEffect(() => {
+    fetcRandomNews();
+  }, []);
+
+  return (
+    <div>
+      <RandomNews items={randomNews} loading={randomLoading} />
+    </div>
+  );
 }
 
 export default HomePage;

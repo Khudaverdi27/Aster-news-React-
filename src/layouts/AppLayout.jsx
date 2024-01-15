@@ -6,7 +6,7 @@ import Subscription from "../components/widgets/subscription";
 
 function AppLayout({ children }) {
   return (
-    <main className="w-[1200px] mx-auto flex gap-x-[45px]">
+    <main className="w-[1300px] mx-auto flex gap-x-[45px]">
       <div className="w-[260px] shrink-0 ">
         <Logo />
         <Navbar />

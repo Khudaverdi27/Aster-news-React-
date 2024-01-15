@@ -1,0 +1,25 @@
+import NewsSkleton from "@/components/widgets/news/NewsSkleton";
+import NewsItem from "@/components/widgets/news/NewsItem";
+import Section from "@/components/ui/section";
+import { Col, Row } from "antd";
+function RandomNews({ items, loading }) {
+  return (
+    <Section title={"Ən çox oxunanlar"}>
+      <Row gutter={[16, 16]}>
+        {items.map((item, index) => (
+          <Col key={index} xs={{ span: 24 }} lg={{ span: 12 }}>
+            {loading ? (
+              <>
+                <NewsSkleton />
+              </>
+            ) : (
+              <NewsItem item={item} />
+            )}
+          </Col>
+        ))}
+      </Row>
+    </Section>
+  );
+}
+
+export default RandomNews;

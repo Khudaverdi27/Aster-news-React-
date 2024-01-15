@@ -1,9 +1,5 @@
 function ViewPage() {
-    return (
-        <div>
-            ViewPage
-        </div>
-    );
+  return <div>ViewPage</div>;
 }
 
 export default ViewPage;
