@@ -4,6 +4,7 @@ import {
   ServiceNewsFetchList,
   ServiceNewsFetchRandomList,
 } from "../services/news.service";
+import { ServiceAuthorFetchList } from "../services/author.service";
 
 const useFetch = (state = false) => {
   const [data, setData] = useState(state);
@@ -44,6 +45,16 @@ export const useFetchNewsList = () => {
 
   const apiFetch = async () => {
     fetch(ServiceNewsFetchList, { limit: 6 });
+  };
+
+  return [data?.data || [], apiFetch, loading];
+};
+
+export const useFetchAuthorRandomList = () => {
+  const [data, fetch, loading] = useFetch([]);
+
+  const apiFetch = async () => {
+    fetch(ServiceAuthorFetchList, { random: true, limit: 5 });
   };
 
   return [data?.data || [], apiFetch, loading];
