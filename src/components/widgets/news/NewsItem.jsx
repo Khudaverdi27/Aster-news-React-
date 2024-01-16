@@ -1,10 +1,10 @@
 import moment from "moment";
 import { FiShare } from "react-icons/fi";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 function NewsItem({ item }) {
   return (
     <article className="bg-white p-[17px] shadow-theme rounded-theme relative">
-      <NavLink to={`/view/${item.slug}`} className="absolute inset-0"></NavLink>
+      <Link to={`/view/${item.slug}`} className="absolute inset-0"></Link>
       <div className="flex space-x-[15px]">
         <div>
           <h4 className="line-clamp-2 text-[17px] font-medium">{item.title}</h4>

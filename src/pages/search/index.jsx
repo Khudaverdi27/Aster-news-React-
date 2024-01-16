@@ -1,15 +1,23 @@
 import { useEffect } from "react";
 import { useFetchNewsByCategoryList } from "../../hooks/useFetch";
-import { findParam, toCapitalizeLetter } from "../../utils/helpers";
+import { findParam } from "../../utils/helpers";
 import NewsSection from "../home/components/NewsSection";
+import { getStorage } from "../../storage/storage";
+
 function SearchPage() {
   const [newsList, fetcNewsList, newsLoading] = useFetchNewsByCategoryList();
-  const category = findParam();
-  const title = toCapitalizeLetter(category);
+
+  const categories = getStorage("categories");
+
+  const categoryName = findParam();
+  const title = categories.find((name) => name.slug === categoryName);
+
   useEffect(() => {
     fetcNewsList();
-  }, [category]);
-  return <NewsSection items={newsList} loading={newsLoading} title={title} />;
+  }, [categoryName]);
+  return (
+    <NewsSection items={newsList} loading={newsLoading} title={title?.name} />
+  );
 }
 
 export default SearchPage;

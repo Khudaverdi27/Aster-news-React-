@@ -18,7 +18,7 @@ function Header() {
             <Search placeholder="input search text" onSearch={onSearch} />
           </Space>
         </div>
-        <div className="flex items-center space-x-9 text-[17px]">
+        <div className=" menu-link">
           {menus.map((menu, index) => (
             <NavLink to={menu.path} key={index} className="flex items-center">
               <span>{menu.icon}</span>

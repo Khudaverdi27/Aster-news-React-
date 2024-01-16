@@ -13,7 +13,3 @@ export const findParam = () => {
   const param = useParams();
   return param.slug;
 };
-
-export const toCapitalizeLetter = (str) => {
-  return str?.charAt(0).toUpperCase() + str?.slice(1);
-};
