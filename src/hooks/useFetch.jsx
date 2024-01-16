@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { ServiceCategoryFetchList } from "../services/category.service";
 import {
+  ServiceNewsByCategoryFetchList,
   ServiceNewsFetchList,
   ServiceNewsFetchRandomList,
 } from "../services/news.service";
 import { ServiceAuthorFetchList } from "../services/author.service";
+import { findParam } from "../utils/helpers";
 
 const useFetch = (state = false) => {
   const [data, setData] = useState(state);
@@ -55,6 +57,15 @@ export const useFetchAuthorRandomList = () => {
 
   const apiFetch = async () => {
     fetch(ServiceAuthorFetchList, { random: true, limit: 5 });
+  };
+
+  return [data?.data || [], apiFetch, loading];
+};
+export const useFetchNewsByCategoryList = () => {
+  const [data, fetch, loading] = useFetch([]);
+  const paramCategory = { category: findParam(), limit: 6 };
+  const apiFetch = async () => {
+    fetch(ServiceNewsByCategoryFetchList, paramCategory);
   };
 
   return [data?.data || [], apiFetch, loading];

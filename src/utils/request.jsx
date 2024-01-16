@@ -41,5 +41,6 @@ const request = async (url, method, params = false) => {
 
 export const get = (url, params = false) =>
   request(url + (params ? "?" + objectToQueryString(params) : ""), "GET");
+
 export const post = (url, params) => request(url, "POST", params);
 export const destroy = (url) => request(url, "DELETE");

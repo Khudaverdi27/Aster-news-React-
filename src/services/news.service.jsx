@@ -9,3 +9,8 @@ export const ServiceNewsFetchList = async (params = {}) => {
   const res = await get(NewsApi.list, params);
   return res;
 };
+
+export const ServiceNewsByCategoryFetchList = async (params = {}) => {
+  const res = await get(NewsApi.list, params);
+  return res;
+};
