@@ -1,23 +1,14 @@
-import React from "react";
 import { FiUser } from "react-icons/fi";
-import { Input, Space } from "antd";
 import DropdownMenu from "../ui/dropdown";
 import menus from "../../routers/menus";
 import { NavLink } from "react-router-dom";
-
-const { Search } = Input;
-
-const onSearch = (value, _e, info) => console.log(info?.source, value);
+import FormSearch from "../ui/Form/FormSearch";
 
 function Header() {
   return (
     <div className="flex justify-between pt-[23px] pb-[40px]">
       <div className="flex items-center space-x-11">
-        <div>
-          <Space className="w-[300px] " direction="vertical">
-            <Search placeholder="input search text" onSearch={onSearch} />
-          </Space>
-        </div>
+        <FormSearch />
         <div className=" menu-link">
           {menus.map((menu, index) => (
             <NavLink to={menu.path} key={index} className="flex items-center">

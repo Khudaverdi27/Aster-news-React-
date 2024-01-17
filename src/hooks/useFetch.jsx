@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ServiceCategoryFetchList } from "../services/category.service";
 import {
   ServiceNewsByCategoryFetchList,
+  ServiceNewsBySearchFetchList,
   ServiceNewsFetchList,
   ServiceNewsFetchRandomList,
 } from "../services/news.service";
@@ -66,6 +67,15 @@ export const useFetchNewsByCategoryList = () => {
   const paramCategory = { category: findParam(), limit: 6 };
   const apiFetch = async () => {
     fetch(ServiceNewsByCategoryFetchList, paramCategory);
+  };
+
+  return [data?.data || [], apiFetch, loading];
+};
+export const useFetchNewsBySearch = (text) => {
+  const [data, fetch, loading] = useFetch([]);
+  const paramCategory = { title: text, limit: 5 };
+  const apiFetch = async () => {
+    fetch(ServiceNewsBySearchFetchList, paramCategory);
   };
 
   return [data?.data || [], apiFetch, loading];
