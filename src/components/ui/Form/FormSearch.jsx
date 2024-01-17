@@ -50,6 +50,7 @@ function FormSearch() {
           {searchRes.length > 0 ? (
             searchRes.map((searchedItem, index) => (
               <Link
+                onClick={() => setIsOpen(false)}
                 to={`/view/${searchedItem.slug}`}
                 className=" flex justify-between items-center"
                 key={index}
