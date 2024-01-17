@@ -14,7 +14,12 @@ export const ServiceNewsByCategoryFetchList = async (params = {}) => {
   const res = await get(NewsApi.list, params);
   return res;
 };
+
 export const ServiceNewsBySearchFetchList = async (params = {}) => {
   const res = await get(NewsApi.list, params);
+  return res;
+};
+export const ServiceNewsBySlugFetchList = async (slug) => {
+  const res = await get(NewsApi.showBySlug.replace(":id", slug));
   return res;
 };

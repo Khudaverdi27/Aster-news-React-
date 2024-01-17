@@ -3,6 +3,7 @@ import { ServiceCategoryFetchList } from "../services/category.service";
 import {
   ServiceNewsByCategoryFetchList,
   ServiceNewsBySearchFetchList,
+  ServiceNewsBySlugFetchList,
   ServiceNewsFetchList,
   ServiceNewsFetchRandomList,
 } from "../services/news.service";
@@ -21,6 +22,7 @@ const useFetch = (state = false) => {
   };
   return [data, fetch, loading];
 };
+
 //category fetch
 export const useFetchCategoryList = () => {
   const [data, fetch, loading] = useFetch([]);
@@ -43,6 +45,7 @@ export const useFetchRandomNewsList = () => {
   return [data?.data || [], apiFetch, loading];
 };
 
+// Regular news
 export const useFetchNewsList = () => {
   const [data, fetch, loading] = useFetch([]);
 
@@ -53,6 +56,7 @@ export const useFetchNewsList = () => {
   return [data?.data || [], apiFetch, loading];
 };
 
+// Author list
 export const useFetchAuthorRandomList = () => {
   const [data, fetch, loading] = useFetch([]);
 
@@ -62,6 +66,8 @@ export const useFetchAuthorRandomList = () => {
 
   return [data?.data || [], apiFetch, loading];
 };
+
+// news by category
 export const useFetchNewsByCategoryList = () => {
   const [data, fetch, loading] = useFetch([]);
   const paramCategory = { category: findParam(), limit: 6 };
@@ -71,6 +77,8 @@ export const useFetchNewsByCategoryList = () => {
 
   return [data?.data || [], apiFetch, loading];
 };
+
+// news by search title
 export const useFetchNewsBySearch = (text) => {
   const [data, fetch, loading] = useFetch([]);
   const paramCategory = { title: text, limit: 5 };
@@ -79,4 +87,14 @@ export const useFetchNewsBySearch = (text) => {
   };
 
   return [data?.data || [], apiFetch, loading];
+};
+
+export const useFetchNewsBySlug = () => {
+  const [data, fetch, loading] = useFetch(false);
+  const slug = findParam();
+  const apiFetch = async () => {
+    fetch(ServiceNewsBySlugFetchList, slug);
+  };
+
+  return [data || false, apiFetch, loading];
 };

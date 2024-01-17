@@ -23,10 +23,11 @@ function FormSearch() {
   };
 
   useEffect(() => {
-    fetchSearchRes();
-    if (!text) {
-      setIsOpen(false);
+    const trimmed = text.trim() !== "";
+    if (trimmed) {
+      fetchSearchRes();
     }
+    setIsOpen(trimmed);
   }, [text]);
 
   return (
@@ -58,7 +59,7 @@ function FormSearch() {
                 <p>{searchedItem.title}</p>
                 <figure className="size-[34px] m-1">
                   <img
-                    className="img-cover rounded-full"
+                    className="img-cover rounded-sm"
                     src={searchedItem.photo}
                     alt="searchbarPhoto"
                   />

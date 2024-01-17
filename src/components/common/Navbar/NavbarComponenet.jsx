@@ -43,29 +43,31 @@ function NavbarComponent() {
     fetchCategories();
   }, []);
   return (
-    <div className="pr-[17px]">
-      {categories.map((category, index) => (
-        <div key={index}>
-          {loading ? (
-            <NavbarSkleton />
-          ) : (
-            <NavLink
-              to={"/search/" + category.slug}
-              className={classNames({
-                "flex items-center h-[50px] rounded-tr-full relative rounded-br-full pl-[33px] text-amberBlack space-x-[22px]": true,
-                "bg-[#e0f0f8] text-skyBlue font-bold after:content-[''] after:absolute after:left-[15px] after:size-2 after:rounded-full after:bg-skyBlue":
-                  params === category.slug,
-              })}
-            >
-              <span className="text-[24px]">
-                <Icon slug={category.slug} />
-              </span>
-              <span>{category.name}</span>
-            </NavLink>
-          )}
-        </div>
-      ))}
-    </div>
+    <>
+      <div className="pr-[17px]">
+        {categories.map((category, index) => (
+          <div key={index}>
+            {loading ? (
+              <NavbarSkleton />
+            ) : (
+              <NavLink
+                to={"/search/" + category.slug}
+                className={classNames({
+                  "flex items-center h-[50px] rounded-tr-full relative rounded-br-full pl-[33px] text-amberBlack space-x-[22px]": true,
+                  "bg-[#e0f0f8] text-skyBlue font-bold after:content-[''] after:absolute after:left-[15px] after:size-2 after:rounded-full after:bg-skyBlue":
+                    params === category.slug,
+                })}
+              >
+                <span className="text-[24px]">
+                  <Icon slug={category.slug} />
+                </span>
+                <span>{category.name}</span>
+              </NavLink>
+            )}
+          </div>
+        ))}
+      </div>
+    </>
   );
 }
 

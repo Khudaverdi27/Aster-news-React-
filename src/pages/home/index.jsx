@@ -6,6 +6,7 @@ import {
 import { useEffect } from "react";
 import NewsSection from "./components/NewsSection";
 import AuthorSection from "./components/AuthorSection";
+import { Helmet } from "react-helmet";
 
 function HomePage() {
   const [randomNews, fetcRandomNews, randomLoading] = useFetchRandomNewsList();
@@ -19,6 +20,10 @@ function HomePage() {
 
   return (
     <>
+      <Helmet>
+        <title>Aster News</title>
+      </Helmet>
+
       <div>
         <NewsSection
           title={"Ən son xəbərlər"}
