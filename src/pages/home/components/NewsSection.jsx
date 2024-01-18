@@ -4,7 +4,7 @@ import Section from "@/components/ui/section";
 import { Col, Row } from "antd";
 function NewsSection({ items, loading, title }) {
   return (
-    <Section title={title}>
+    <Section title={title} loading={loading}>
       <Row gutter={[16, 16]}>
         {items.map((item, index) => (
           <Col key={index} xs={{ span: 24 }} lg={{ span: 12 }}>

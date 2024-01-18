@@ -17,6 +17,10 @@ export default {
       boxShadow:{
         theme:' 0px 2px 20px 0px rgba(0, 0, 0, 0.04)'
       },
+      aspectRatio: {
+        '4/3': '4 / 3',
+        '3/2': '3 / 2'
+      },
     },
   },
   plugins: [],
