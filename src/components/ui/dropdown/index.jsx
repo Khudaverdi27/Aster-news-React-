@@ -6,12 +6,12 @@ import { Dropdown, Menu, Space } from "antd";
 const items = [
   {
     key: "profile",
-    label: "Profile",
+    label: "Profil",
     icon: <FiUser />,
   },
   {
     key: "Logout",
-    label: "Logout",
+    label: "Çıxış et",
     icon: <FiLogOut />,
   },
 ];

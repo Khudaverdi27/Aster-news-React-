@@ -3,7 +3,7 @@ import Button from "../../ui/button";
 import { useState } from "react";
 
 function Subscription({ className }) {
-  const [text, setText] = useState("Upgrade");
+  const [text, setText] = useState("Yüksəlt");
   return (
     <div
       className={`bg-skyBlue rounded-theme text-white ml-[16px] ${
@@ -13,14 +13,14 @@ function Subscription({ className }) {
       {" "}
       <div className="flex items-center justify-between mb-[13px] ">
         <GoGift className="text-[24px]" />
-        <span>Subscribe to premium</span>
+        <span> Premiuma abunə ol</span>
       </div>
       <div className="flex items-center justify-between">
         <span className="text-[30px]">
-          $8 <small className="text-[15px]">/m</small>
+          $8 <small className="text-[15px]">/a</small>
         </span>
         <Button
-          onClick={() => setText("Upgraded")}
+          onClick={() => setText("Yüksəldildi")}
           property={"primary"}
           rounded={true}
         >

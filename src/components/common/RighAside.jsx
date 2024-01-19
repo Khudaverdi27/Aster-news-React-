@@ -16,7 +16,7 @@ function RightAside() {
         </div>
         <div className="flex justify-between py-[15px]">
           <div>
-            <p className="text-[15px]">Sunny</p>
+            <p className="text-[15px]">Günəşli</p>
             <span className="text-[26px] font-bold">
               31 <sup>o</sup> <small>C</small>
             </span>
@@ -35,11 +35,11 @@ function RightAside() {
           <span className="size-[24px]">
             <FiFeather className="size-full" />
           </span>
-          <p className="text-[15px]">Become a Story Writer</p>
+          <p className="text-[15px]">Məqalə yazarı ol</p>
         </div>
         <div className="flex ">
           <p className="text-xs mr-4 opacity-60">
-            Contribute stories and start earning.
+            Məqalə yazaraq qazanmağa başla
           </p>
           <Button
             rounded={"rounded-theme"}
@@ -47,7 +47,7 @@ function RightAside() {
             border={true}
             padding={true}
           >
-            <span className="text-skyBlue">Know More</span>
+            <span className="text-skyBlue">Daha çox</span>
           </Button>
         </div>
       </div>
@@ -57,7 +57,7 @@ function RightAside() {
             <span className="size-[24px]">
               <LuFileText className="size-full" />
             </span>
-            <span>Quick Bytes</span>
+            <span>Sürətli Qeydlər</span>
           </div>
           <div className="flex items-center space-x-2">
             <span className="size-[24px] rounded-full bg-skyBlue flex items-center justify-center opacity-50">
@@ -93,10 +93,10 @@ function RightAside() {
         </div>
       </div>
       <div className="right-section-cards space-y-3 text-[15px]">
-        <p>Subscribe to our newsletter</p>
+        <p>Xəbərlərimizə abunə ol</p>
         <FormText placeholder={"Enter Email"} />
         <Button rounded={"rounded-theme"} property={"sky-blue"} block={true}>
-          Subscribe
+          Abunə ol
         </Button>
       </div>
     </aside>

@@ -37,7 +37,7 @@ function Header() {
             <span>
               <FiUser className="text-[24px]" />
             </span>
-            <span>My Profile</span>
+            <span>Mənim Profilim</span>
           </span>
         </DropdownMenu>
       </div>
