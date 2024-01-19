@@ -1,7 +1,11 @@
-function FormText() {
+function FormText({ placeholder }) {
   return (
     <div>
-      <input type="text" />
+      <input
+        className="w-full outline-none border border-gray-400 p-2 rounded-theme"
+        placeholder={placeholder}
+        type="text"
+      />
     </div>
   );
 }

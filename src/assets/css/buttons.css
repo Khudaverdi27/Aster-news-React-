@@ -1,5 +1,5 @@
 .btn{
-    @apply flex py-0 px-[25px] justify-center items-center
+    @apply flex py-0 justify-center items-center
 }
 
 .btn--sm{

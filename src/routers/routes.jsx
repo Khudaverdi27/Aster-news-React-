@@ -4,6 +4,7 @@ import ContactPage from "../pages/contact";
 import SearchPage from "../pages/search";
 import ViewPage from "../pages/view";
 import AppLayout from "../layouts/AppLayout";
+import ErrorPage from "../pages/error";
 
 export const routes = [
   { path: "/", element: <HomePage />, layout: "AppLayout" },
@@ -11,6 +12,7 @@ export const routes = [
   { path: "/contact", element: <ContactPage />, layout: "AppLayout" },
   { path: "/search/:slug", element: <SearchPage />, layout: "AppLayout" },
   { path: "/view/:slug", element: <ViewPage />, layout: "AppLayout" },
+  { path: "*", element: <ErrorPage />, layout: "AppLayout" },
 ];
 
 routes.map((route) => {
