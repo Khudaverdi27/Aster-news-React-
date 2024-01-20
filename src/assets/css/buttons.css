@@ -2,6 +2,9 @@
     @apply flex py-0 justify-center items-center
 }
 
+.btn--xs{
+    @apply h-[28px]
+}
 .btn--sm{
     @apply h-[30px]
 }

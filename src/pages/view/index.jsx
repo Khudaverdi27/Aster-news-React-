@@ -1,17 +1,29 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useFetchNewsBySlug } from "../../hooks/useFetch";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { findParam } from "../../utils/helpers";
+import Button from "@/components/ui/button";
 import { Spin } from "antd";
+import moment from "moment";
 
 function ViewPage() {
   const [slugNews, setSlugNews, slugLoading] = useFetchNewsBySlug();
+  const [visible, setVisible] = useState(false);
   const slugParams = findParam();
 
   useEffect(() => {
     setSlugNews();
   }, [slugParams]);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+      /* you can also use 'auto' behaviour 
+           in place of 'smooth' */
+    });
+  };
 
   return (
     <>
@@ -55,6 +67,27 @@ function ViewPage() {
               {slugNews.content && (
                 <div dangerouslySetInnerHTML={{ __html: slugNews?.content }} />
               )}
+            </div>
+            <div className="text-xs flex justify-center items-center mt-9">
+              <div className="text-center">
+                <p className="opacity-30">
+                  Published -
+                  {moment(slugNews.published_date).format(
+                    "MMMM Do YYYY - h:mm:ss a"
+                  )}
+                </p>
+                <p className="mb-4">{slugNews.author?.fullname}</p>
+                <div className="flex justify-center items-center mb-11">
+                  <Button
+                    onClick={scrollToTop}
+                    padding={true}
+                    size={"xs"}
+                    border={true}
+                  >
+                    <span className="text-skyBlue underline">Back to top</span>
+                  </Button>
+                </div>
+              </div>
             </div>
           </>
         )
