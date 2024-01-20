@@ -44,7 +44,7 @@ function NavbarComponent() {
   }, []);
   return (
     <>
-      <div className="pr-[17px]">
+      <div className="pr-[17px] ">
         {categories.map((category, index) => (
           <div key={index}>
             {loading ? (

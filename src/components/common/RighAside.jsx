@@ -7,7 +7,7 @@ import Button from "@/components/ui/button";
 import FormText from "../ui/Form/FormText";
 function RightAside() {
   return (
-    <aside className="space-y-[15px]">
+    <aside className="space-y-[15px] mt-24 sticky top-24">
       <div className="right-section-cards">
         <div className="flex justify-between border-b">
           <p className="text-[15px]">Coimbatore, Tamil Nadu</p>

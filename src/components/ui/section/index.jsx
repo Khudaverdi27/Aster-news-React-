@@ -3,7 +3,7 @@ import { Skeleton } from "antd";
 function Section({ title, children, loading }) {
   return (
     <section className={loading ? "" : "mb-[40px]"}>
-      <div>
+      <div className="mt-24">
         {loading ? (
           <Skeleton
             paragraph={{

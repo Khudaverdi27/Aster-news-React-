@@ -6,7 +6,10 @@ import FormSearch from "../ui/Form/FormSearch";
 
 function Header() {
   return (
-    <div className="flex justify-between pt-[23px] pb-[40px]">
+    <div
+      className="flex justify-between pt-[23px] pb-[40px] fixed bg-[#F4F9F8]
+   w-[1024px] z-50 "
+    >
       <div className="flex items-center space-x-11">
         <FormSearch />
         <div className=" menu-link">

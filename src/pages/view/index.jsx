@@ -9,7 +9,6 @@ import moment from "moment";
 
 function ViewPage() {
   const [slugNews, setSlugNews, slugLoading] = useFetchNewsBySlug();
-  const [visible, setVisible] = useState(false);
   const slugParams = findParam();
 
   useEffect(() => {

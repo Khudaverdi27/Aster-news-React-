@@ -8,10 +8,12 @@ import Subscription from "../components/widgets/subscription";
 function AppLayout({ children }) {
   return (
     <main className="w-[1300px] mx-auto flex gap-x-[45px]">
-      <div className="w-[240px] shrink-0 ">
-        <Logo />
-        <NavbarComponent />
-        <Subscription className={"mt-[40px]"} />
+      <div className="w-[240px] shrink-0 relative">
+        <div className="sticky top-0">
+          <Logo />
+          <NavbarComponent />
+          <Subscription className={"mt-[40px]"} />
+        </div>
       </div>
       <div className="flex-1">
         <Header />
