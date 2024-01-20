@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
-import { useFetchNewsBySlug, useFetchNewsComments } from "../../hooks/useFetch";
+import {
+  useFetchNewsByAuthor,
+  useFetchNewsBySlug,
+  useFetchNewsComments,
+} from "../../hooks/useFetch";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { findParam } from "../../utils/helpers";
@@ -12,6 +16,7 @@ import NewsCommments from "../../components/widgets/news/NewsComments";
 function ViewPage() {
   const [slugNews, setSlugNews, slugLoading] = useFetchNewsBySlug();
   const [comments, fetchComments, commentsLoading] = useFetchNewsComments([]);
+
   const slugParams = findParam();
 
   useEffect(() => {
@@ -56,7 +61,7 @@ function ViewPage() {
                 </Link>
                 <Link
                   className="inline-flex bg-sky-200 px-2 py-1 rounded-theme"
-                  to={`/search/${slugNews.author?.slug}`}
+                  to={`/author/${slugNews.author?.slug}`}
                 >
                   {`Yazar: ${slugNews.author?.fullname}`}
                 </Link>

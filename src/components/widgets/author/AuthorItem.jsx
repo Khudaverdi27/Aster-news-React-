@@ -1,6 +1,10 @@
+import { Link } from "react-router-dom";
 import Button from "../../ui/button";
 
 function AuthorItem({ item }) {
+  const handleLinkClick = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <article className="bg-white shadow-theme p-[13px] w-[132px] h-[190px] flex flex-col justify-between">
       <figure className="size-[70px] rounded-full mx-auto overflow-hidden">
@@ -12,7 +16,9 @@ function AuthorItem({ item }) {
           {item.agency}
         </p>
         <Button size="sm" property="sky-blue" rounded={true} block={true}>
-          Xəbərlər
+          <Link onClick={handleLinkClick} to={`/author/${item.slug}`}>
+            Xəbərlər
+          </Link>
         </Button>
       </div>
     </article>

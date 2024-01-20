@@ -23,6 +23,10 @@ export const ServiceNewsBySlugFetchList = async (slug) => {
   const res = await get(NewsApi.showBySlug.replace(":id", slug));
   return res;
 };
+export const ServiceNewsByAuthorFetchList = async (params = {}) => {
+  const res = await get(NewsApi.list, params);
+  return res.data;
+};
 export const ServiceNewsByCommentsList = async (id) => {
   const res = await get(NewsApi.comments.replace(":id", id));
   return res;

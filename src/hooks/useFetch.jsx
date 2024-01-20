@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ServiceCategoryFetchList } from "../services/category.service";
 import {
+  ServiceNewsByAuthorFetchList,
   ServiceNewsByCategoryFetchList,
   ServiceNewsByCommentsList,
   ServiceNewsBySearchFetchList,
@@ -90,6 +91,7 @@ export const useFetchNewsBySearch = (text) => {
   return [data?.data || [], apiFetch, loading];
 };
 
+// news by slug
 export const useFetchNewsBySlug = () => {
   const [data, fetch, loading] = useFetch(false);
   const slug = findParam();
@@ -99,6 +101,18 @@ export const useFetchNewsBySlug = () => {
 
   return [data || false, apiFetch, loading];
 };
+// news by author
+export const useFetchNewsByAuthor = () => {
+  const [data, fetch, loading] = useFetch(false);
+
+  const apiFetch = async (author) => {
+    fetch(ServiceNewsByAuthorFetchList, author);
+  };
+
+  return [data || [], apiFetch, loading];
+};
+
+// news comments
 export const useFetchNewsComments = () => {
   const [data, fetch, loading] = useFetch(false);
 
