@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ServiceCategoryFetchList } from "../services/category.service";
 import {
   ServiceNewsByCategoryFetchList,
+  ServiceNewsByCommentsList,
   ServiceNewsBySearchFetchList,
   ServiceNewsBySlugFetchList,
   ServiceNewsFetchList,
@@ -97,4 +98,13 @@ export const useFetchNewsBySlug = () => {
   };
 
   return [data || false, apiFetch, loading];
+};
+export const useFetchNewsComments = () => {
+  const [data, fetch, loading] = useFetch(false);
+
+  const apiFetch = async (id) => {
+    fetch(ServiceNewsByCommentsList, id);
+  };
+
+  return [data || [], apiFetch, loading];
 };

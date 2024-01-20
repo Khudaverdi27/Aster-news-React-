@@ -1,19 +1,28 @@
 import { useEffect, useState } from "react";
-import { useFetchNewsBySlug } from "../../hooks/useFetch";
+import { useFetchNewsBySlug, useFetchNewsComments } from "../../hooks/useFetch";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { findParam } from "../../utils/helpers";
 import Button from "@/components/ui/button";
 import { Spin } from "antd";
 import moment from "moment";
+import NewsCommetnForm from "../../components/widgets/news/NewsCommentForm";
+import NewsCommments from "../../components/widgets/news/NewsComments";
 
 function ViewPage() {
   const [slugNews, setSlugNews, slugLoading] = useFetchNewsBySlug();
+  const [comments, fetchComments, commentsLoading] = useFetchNewsComments([]);
   const slugParams = findParam();
 
   useEffect(() => {
     setSlugNews();
   }, [slugParams]);
+
+  useEffect(() => {
+    if (slugNews?.id) {
+      fetchComments(slugNews.id);
+    }
+  }, [slugNews]);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -25,7 +34,7 @@ function ViewPage() {
   };
 
   return (
-    <>
+    <div className="mt-24">
       {slugLoading ? (
         <div className="flex items-center justify-center min-h-80">
           <Spin size="large" />
@@ -70,7 +79,7 @@ function ViewPage() {
             <div className="text-xs flex justify-center items-center mt-9">
               <div className="text-center">
                 <p className="opacity-30">
-                  Published -
+                  Dərc Olundu -
                   {moment(slugNews.published_date).format(
                     "MMMM Do YYYY - h:mm:ss a"
                   )}
@@ -83,15 +92,17 @@ function ViewPage() {
                     size={"xs"}
                     border={true}
                   >
-                    <span className="text-skyBlue underline">Back to top</span>
+                    <span className="text-skyBlue underline">Başa Dön</span>
                   </Button>
                 </div>
               </div>
             </div>
+            <NewsCommetnForm />
+            <NewsCommments items={comments} />
           </>
         )
       )}
-    </>
+    </div>
   );
 }
 
