@@ -3,21 +3,24 @@ import { FiShare } from "react-icons/fi";
 import { Link } from "react-router-dom";
 function NewsItem({ item }) {
   return (
-    <article className="bg-white p-[17px] shadow-theme rounded-theme relative">
-      <Link to={`/view/${item.slug}`} className="absolute inset-0"></Link>
-      <div className="flex space-x-[15px]">
-        <div>
-          <h4 className="line-clamp-2 text-[17px] font-medium">{item.title}</h4>
-          <p className="line-clamp-3 text-gray-500 text-[14px]">
-            {item.description}
-          </p>
+    <article className="bg-white p-[17px] shadow-theme rounded-theme ">
+      <Link to={`/view/${item.slug}`}>
+        <div className="flex space-x-[15px]">
+          <div>
+            <h4 className="line-clamp-2 text-[17px] font-medium">
+              {item.title}
+            </h4>
+            <p className="line-clamp-3 text-gray-500 text-[14px]">
+              {item.description}
+            </p>
+          </div>
+          <div>
+            <figure className="size-[132px]">
+              <img className="img-cover" src={item.photo} alt="" />
+            </figure>
+          </div>
         </div>
-        <div>
-          <figure className="size-[132px]">
-            <img className="img-cover" src={item.photo} alt="" />
-          </figure>
-        </div>
-      </div>
+      </Link>
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-2 text-[12px] text-gray-400 mt-[10px]">
           <span>{item.author.agency}</span>
