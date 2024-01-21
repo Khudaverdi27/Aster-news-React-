@@ -16,9 +16,9 @@ function AuthorPage() {
 
   return (
     <>
-      {/* <Helmet>
-        <title>Aster News / {title?.author?.fullname}</title>
-      </Helmet> */}
+      <Helmet>
+        <title>{`Aster News / ${title?.author?.fullname}`}</title>
+      </Helmet>
       <NewsSection
         authorImage={title?.author?.photo}
         items={author}

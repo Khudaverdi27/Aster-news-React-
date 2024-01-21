@@ -19,7 +19,7 @@ function SearchPage() {
   return (
     <>
       <Helmet>
-        <title>Aster News / {title.name}</title>
+        <title>{`Aster News / ${title?.name}`}</title>
       </Helmet>
       <NewsSection items={newsList} loading={newsLoading} title={title?.name} />
     </>
