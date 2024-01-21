@@ -10,6 +10,7 @@ import {
   ServiceNewsFetchRandomList,
 } from "../services/news.service";
 import { ServiceAuthorFetchList } from "../services/author.service";
+import { serviceWeather } from "../services/weather.service";
 import { findParam } from "../utils/helpers";
 
 const useFetch = (state = false) => {
@@ -121,4 +122,14 @@ export const useFetchNewsComments = () => {
   };
 
   return [data || [], apiFetch, loading];
+};
+// wheather info
+export const useFetchWeatherData = () => {
+  const [data, fetch, loading] = useFetch(false);
+
+  const apiFetch = async () => {
+    fetch(serviceWeather);
+  };
+
+  return [data || false, apiFetch, loading];
 };

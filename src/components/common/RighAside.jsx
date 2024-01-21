@@ -1,31 +1,59 @@
 import { FiCrosshair } from "react-icons/fi";
-import { IoSunnyOutline } from "react-icons/io5";
 import { FiFeather } from "react-icons/fi";
 import Button from "@/components/ui/button";
 import FormText from "../ui/Form/FormText";
 import SliderCard from "../widgets/slider";
+import { useEffect, useState } from "react";
+import { useFetchWeatherData } from "../../hooks/useFetch";
+import { getWeatherIcon } from "../../utils/helpers";
 function RightAside() {
+  const [weatherInfo, setWeather, weatherLoading] = useFetchWeatherData();
+  const [fahrenheit, setFahrenheit] = useState(false);
+  useEffect(() => {
+    setWeather();
+  }, []);
+  console.log(weatherInfo);
   return (
     <aside className="space-y-[15px] mt-24 sticky top-24">
       <div className="right-section-cards">
         <div className="flex justify-between border-b">
-          <p className="text-[15px]">Coimbatore, Tamil Nadu</p>
+          <p className="text-[15px]">
+            {weatherInfo?.name}, {weatherInfo?.sys?.country}
+          </p>
           <FiCrosshair />
         </div>
         <div className="flex justify-between py-[15px]">
           <div>
-            <p className="text-[15px]">Günəşli</p>
+            <p className="text-[15px]">{weatherInfo?.weather?.[0]?.main}</p>
             <span className="text-[26px] font-bold">
-              31 <sup>o</sup> <small>C</small>
+              {fahrenheit
+                ? fahrenheit.toFixed(0)
+                : Math.round(weatherInfo?.main?.temp - 272.15)}{" "}
+              <sup>{!fahrenheit && "o"}</sup>{" "}
+              <small>{fahrenheit ? "F" : "C"}</small>
             </span>
           </div>
           <div className="size-[52px]">
-            <IoSunnyOutline className="text-[#FFCF26] text-[32px] size-full" />
+            <span className="text-[#dcc674] text-[32px] size-full">
+              {getWeatherIcon(weatherInfo?.weather?.[0]?.icon)}
+            </span>
           </div>
         </div>
         <div className="flex text-[12px] space-x-[23px]">
-          <p>Celsius</p>
-          <p className="opacity-30">Fahrenheit</p>
+          <button
+            className={fahrenheit ? "opacity-30" : ""}
+            onClick={() => setFahrenheit(false)}
+          >
+            Celsius
+          </button>
+          <button
+            onClick={() => {
+              setFahrenheit(((weatherInfo?.main?.temp - 272.15) * 9) / 5 + 32);
+            }}
+            className={!fahrenheit ? "opacity-30" : ""}
+          >
+            Fahrenheit
+          </button>
         </div>
       </div>
       <div className="right-section-cards">

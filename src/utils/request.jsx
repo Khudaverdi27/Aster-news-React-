@@ -1,18 +1,14 @@
+import { getStorage } from "../storage/storage";
 import { objectToQueryString } from "./helpers";
 
 const base_URL = import.meta.env.VITE_API_URL;
+const urlWeather = import.meta.env.VITE_WEATHER_URL;
 
-const request = async (url, method, params = false) => {
-  const token = localStorage.getItem("token")
-    ? JSON.parse(localStorage.getItem("token"))
-    : {};
+const request = async (base_URL, url, method, params = false) => {
+  const token = getStorage("token");
   let headers = {
     Accept: "application/json",
-    "Content-Type": "application/json",
   };
-  if (token) {
-    headers["Authorization"] = `Bearer ${token}`;
-  }
 
   let options = {
     method,
@@ -21,7 +17,13 @@ const request = async (url, method, params = false) => {
 
   if (params) {
     options.body = JSON.stringify(params);
+    headers["Content-Type"] = "application/json";
+    // post commment to news
+    if (token) {
+      headers.Authorization = `Bearer ${token}`;
+    }
   }
+
   const api = await fetch(base_URL + url, options);
 
   if (api.ok) {
@@ -40,7 +42,12 @@ const request = async (url, method, params = false) => {
 };
 
 export const get = (url, params = false) =>
-  request(url + (params ? "?" + objectToQueryString(params) : ""), "GET");
+  request(
+    base_URL,
+    url + (params ? "?" + objectToQueryString(params) : ""),
+    "GET"
+  );
 
-export const post = (url, params) => request(url, "POST", params);
-export const destroy = (url) => request(url, "DELETE");
+export const post = (url, params) => request(base_URL, url, "POST", params);
+export const destroy = (url) => request(base_URL, url, "DELETE");
+export const getWeather = (url) => request(urlWeather, url, "GET");
