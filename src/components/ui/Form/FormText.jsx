@@ -4,6 +4,7 @@ function FormText({
   labelName,
   type,
   errorMsg,
+  value,
   onChange = () => {},
 }) {
   return (
@@ -12,6 +13,7 @@ function FormText({
         <p className="font-bold">{labelName}</p>
         <div>
           <input
+            value={value}
             onChange={onChange}
             className={`${
               labelName ? "w-[375px]" : "w-full"

@@ -72,6 +72,8 @@ const ModalForLogin = () => {
           <>
             {" "}
             <FormText
+              value={email}
+              placeholder={"Test mail: erna54@hotmail.com"}
               onChange={onChangeEmail}
               type={"email"}
               padding={"p-1"}
@@ -81,6 +83,8 @@ const ModalForLogin = () => {
               }
             />
             <FormText
+              value={password}
+              placeholder={"Test password: 123"}
               onChange={onChangePassword}
               type={"password"}
               padding={"p-1"}
