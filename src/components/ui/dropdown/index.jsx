@@ -2,6 +2,7 @@ import { FaAngleDown } from "react-icons/fa";
 import { FiLogOut, FiUser } from "react-icons/fi";
 
 import { Dropdown, Menu, Space } from "antd";
+import { removeStorage } from "../../../storage/storage";
 
 const items = [
   {
@@ -17,7 +18,11 @@ const items = [
 ];
 
 const handleClick = (i) => {
-  console.log(i);
+  if (i.key == "Logout") {
+    removeStorage("user");
+    removeStorage("token");
+    location.reload();
+  }
 };
 
 const DropdownMenu = ({ children, helperBlock }) => (

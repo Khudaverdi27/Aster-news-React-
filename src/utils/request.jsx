@@ -35,8 +35,10 @@ const request = async (base_URL, url, method, params = false) => {
     removeStorage("user");
     location.reload();
     return false;
-  } else if (api.status === 422) return { status: 422, message: api.json() };
-  else {
+  } else if (api.status === 422) {
+    const errorMessage = await api.json();
+    return { status: 422, message: errorMessage };
+  } else {
     return { status: 500 };
   }
 };

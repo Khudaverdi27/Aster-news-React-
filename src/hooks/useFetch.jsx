@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ServiceCategoryFetchList } from "../services/category.service";
 import {
+  ServiceLogin,
   ServiceNewsByAuthorFetchList,
   ServiceNewsByCategoryFetchList,
   ServiceNewsByCommentsList,
@@ -129,6 +130,15 @@ export const useFetchWeatherData = () => {
 
   const apiFetch = async () => {
     fetch(serviceWeather);
+  };
+
+  return [data || false, apiFetch, loading];
+};
+export const useFetchLoginData = () => {
+  const [data, fetch, loading] = useFetch(false);
+
+  const apiFetch = async (params = {}) => {
+    fetch(ServiceLogin, params);
   };
 
   return [data || false, apiFetch, loading];

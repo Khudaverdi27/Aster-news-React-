@@ -1,0 +1,7 @@
+.ant-input{
+    @apply bg-[#ECF5F8]
+}
+.ant-modal .ant-btn{
+    @apply border border-skyBlue text-black
+  
+  }

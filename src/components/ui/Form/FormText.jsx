@@ -1,12 +1,28 @@
-function FormText({ placeholder, padding }) {
+function FormText({
+  placeholder,
+  padding,
+  labelName,
+  type,
+  errorMsg,
+  onChange = () => {},
+}) {
   return (
-    <div className="mt-3 w-full">
-      <input
-        className={`w-full outline-none border border-gray-400 ${padding} rounded-theme`}
-        placeholder={placeholder}
-        type="text"
-      />
-    </div>
+    <>
+      <label className="mt-3 w-full flex justify-between">
+        <p className="font-bold">{labelName}</p>
+        <div>
+          <input
+            onChange={onChange}
+            className={`${
+              labelName ? "w-[375px]" : "w-full"
+            } outline-none border border-gray-400 ${padding} rounded-theme`}
+            placeholder={placeholder}
+            type={type}
+          />
+          {errorMsg}
+        </div>
+      </label>
+    </>
   );
 }
 
