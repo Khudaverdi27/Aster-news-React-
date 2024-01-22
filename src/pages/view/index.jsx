@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import {
-  useFetchNewsByAuthor,
+  useFetchNewsByCategoryList,
   useFetchNewsBySlug,
   useFetchNewsComments,
 } from "../../hooks/useFetch";
@@ -8,17 +8,22 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { findParam } from "../../utils/helpers";
 import Button from "@/components/ui/button";
+import email from "../../assets/img/email.svg";
 import { Spin } from "antd";
 import moment from "moment";
 import NewsCommetnForm from "../../components/widgets/news/NewsCommentForm";
 import NewsCommments from "../../components/widgets/news/NewsComments";
+import NewsSection from "../home/components/NewsSection";
+import SubscribeEmail from "../../components/widgets/subscription/subscribe";
 
 function ViewPage() {
   const [slugNews, setSlugNews, slugLoading] = useFetchNewsBySlug();
   const [comments, fetchComments, commentsLoading] = useFetchNewsComments([]);
-
+  const [moreNews, setMoreNews, loading] = useFetchNewsByCategoryList(
+    slugNews?.category?.slug,
+    4
+  );
   const slugParams = findParam();
-
   useEffect(() => {
     setSlugNews();
   }, [slugParams]);
@@ -26,6 +31,7 @@ function ViewPage() {
   useEffect(() => {
     if (slugNews?.id) {
       fetchComments(slugNews.id);
+      setMoreNews();
     }
   }, [slugNews]);
 
@@ -104,6 +110,13 @@ function ViewPage() {
             </div>
             <NewsCommetnForm />
             <NewsCommments items={comments} />
+            <div className="bg-[#FFE8C5] mt-12 flex justify-between items-center p-3">
+              <SubscribeEmail flex={true} p={"p-1"} />
+              <figure>
+                <img src={email} alt="" />
+              </figure>
+            </div>
+            <NewsSection items={moreNews} title={"More news for you"} />
           </>
         )
       )}

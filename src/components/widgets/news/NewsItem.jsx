@@ -2,9 +2,12 @@ import moment from "moment";
 import { FiShare } from "react-icons/fi";
 import { Link } from "react-router-dom";
 function NewsItem({ item }) {
+  const handleLinkClick = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <article className="bg-white p-[17px] shadow-theme rounded-theme ">
-      <Link to={`/view/${item.slug}`}>
+      <Link onClick={handleLinkClick} to={`/view/${item.slug}`}>
         <div className="flex space-x-[15px]">
           <div>
             <h4 className="line-clamp-2 text-[17px] font-medium">

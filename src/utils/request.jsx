@@ -1,4 +1,4 @@
-import { getStorage } from "../storage/storage";
+import { getStorage, removeStorage } from "../storage/storage";
 import { objectToQueryString } from "./helpers";
 
 const base_URL = import.meta.env.VITE_API_URL;
@@ -31,8 +31,8 @@ const request = async (base_URL, url, method, params = false) => {
   } else if (api.status === 404) {
     return { status: 404 };
   } else if (api.status === 401) {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
+    removeStorage("token");
+    removeStorage("user");
     location.reload();
     return false;
   } else if (api.status === 422) return { status: 422, message: api.json() };

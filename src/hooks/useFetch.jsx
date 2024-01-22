@@ -71,9 +71,9 @@ export const useFetchAuthorRandomList = () => {
 };
 
 // news by category
-export const useFetchNewsByCategoryList = () => {
+export const useFetchNewsByCategoryList = (categorySlug, count) => {
   const [data, fetch, loading] = useFetch([]);
-  const paramCategory = { category: findParam(), limit: 6 };
+  const paramCategory = { category: categorySlug, limit: count };
   const apiFetch = async () => {
     fetch(ServiceNewsByCategoryFetchList, paramCategory);
   };

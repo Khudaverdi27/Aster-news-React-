@@ -1,12 +1,12 @@
 import { FiCrosshair } from "react-icons/fi";
 import { FiFeather } from "react-icons/fi";
 import Button from "@/components/ui/button";
-import FormText from "../ui/Form/FormText";
 import SliderCard from "../widgets/slider";
 import { useEffect, useState } from "react";
 import { useFetchWeatherData } from "../../hooks/useFetch";
 import { getWeatherIcon } from "../../utils/helpers";
 import NewsSkleton from "../widgets/news/NewsSkleton";
+import SubscribeEmail from "../widgets/subscription/subscribe";
 function RightAside() {
   const [weatherInfo, setWeather, weatherLoading] = useFetchWeatherData();
   const [fahrenheit, setFahrenheit] = useState(false);
@@ -16,7 +16,7 @@ function RightAside() {
 
   return (
     <aside className="space-y-[15px] mt-24 sticky top-24">
-      <div className="right-section-cards">
+      <div className="right-section-cards  bg-white shadow-theme">
         {weatherLoading ? (
           <NewsSkleton image={false} />
         ) : (
@@ -65,7 +65,7 @@ function RightAside() {
           </>
         )}
       </div>
-      <div className="right-section-cards">
+      <div className="right-section-cards  bg-white shadow-theme">
         <div className="flex items-center space-x-[12px] mb-3">
           <span className="size-[24px]">
             <FiFeather className="size-full" />
@@ -87,13 +87,7 @@ function RightAside() {
         </div>
       </div>
       <SliderCard />
-      <div className="right-section-cards space-y-3 text-[15px]">
-        <p>Xəbərlərimizə abunə ol</p>
-        <FormText placeholder={"Enter Email"} />
-        <Button rounded={"rounded-theme"} property={"sky-blue"} block={true}>
-          Abunə ol
-        </Button>
-      </div>
+      <SubscribeEmail block={true} p={"p-2"} />
     </aside>
   );
 }

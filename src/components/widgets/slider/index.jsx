@@ -18,7 +18,7 @@ function SliderCard() {
     }
   };
   return (
-    <div className="right-section-cards space-y-[13px]">
+    <div className="right-section-cards space-y-[13px]  bg-white shadow-theme">
       <div className="flex justify-between border-b pb-2">
         <div className="flex items-center space-x-[11px]">
           <span className="size-[24px]">

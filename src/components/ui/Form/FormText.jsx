@@ -1,8 +1,8 @@
-function FormText({ placeholder }) {
+function FormText({ placeholder, padding }) {
   return (
-    <div>
+    <div className="mt-3 w-full">
       <input
-        className="w-full outline-none border border-gray-400 p-2 rounded-theme"
+        className={`w-full outline-none border border-gray-400 ${padding} rounded-theme`}
         placeholder={placeholder}
         type="text"
       />

@@ -6,7 +6,11 @@ import { getStorage } from "../../storage/storage";
 import { Helmet } from "react-helmet";
 
 function SearchPage() {
-  const [newsList, fetcNewsList, newsLoading] = useFetchNewsByCategoryList();
+  const slugCategory = findParam();
+  const [newsList, fetcNewsList, newsLoading] = useFetchNewsByCategoryList(
+    slugCategory,
+    6
+  );
 
   const categories = getStorage("categories");
 
