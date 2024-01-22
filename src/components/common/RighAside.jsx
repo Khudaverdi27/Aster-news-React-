@@ -7,6 +7,7 @@ import { useFetchWeatherData } from "../../hooks/useFetch";
 import { getWeatherIcon } from "../../utils/helpers";
 import NewsSkleton from "../widgets/news/NewsSkleton";
 import SubscribeEmail from "../widgets/subscription/subscribe";
+import { Link } from "react-router-dom";
 function RightAside() {
   const [weatherInfo, setWeather, weatherLoading] = useFetchWeatherData();
   const [fahrenheit, setFahrenheit] = useState(false);
@@ -39,7 +40,7 @@ function RightAside() {
                 </span>
               </div>
               <div className="size-[52px]">
-                <span className="text-[#dcc674] text-[32px] size-full">
+                <span className="text-[#dcc674] text-[62px] size-full">
                   {getWeatherIcon(weatherInfo?.weather?.[0]?.icon)}
                 </span>
               </div>
@@ -82,7 +83,9 @@ function RightAside() {
             border={true}
             padding={true}
           >
-            <span className="text-skyBlue">Daha çox</span>
+            <Link to={"/contact"} className="text-skyBlue">
+              Daha çox
+            </Link>
           </Button>
         </div>
       </div>

@@ -3,18 +3,23 @@ import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useRef } from "react";
 import { Pagination, Navigation } from "swiper/modules";
+import { useState } from "react";
 function SliderCard() {
+  const [active, setActive] = useState(false);
+
   const swiperRef = useRef(null);
 
   const handleNext = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
       swiperRef.current.swiper.slideNext();
+      setActive(true);
     }
   };
 
   const handlePrev = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
       swiperRef.current.swiper.slidePrev();
+      setActive(false);
     }
   };
   return (
@@ -29,13 +34,17 @@ function SliderCard() {
         <div className="flex items-center space-x-2">
           <button
             onClick={handlePrev}
-            className="size-[24px] rounded-full bg-skyBlue flex items-center justify-center opacity-50"
+            className={`size-[24px] rounded-full bg-skyBlue flex items-center justify-center ${
+              active ? "opacity-50" : ""
+            }`}
           >
             <FaAngleLeft className="text-white" />
           </button>
           <button
             onClick={handleNext}
-            className="rounded-full size-[24px] bg-skyBlue flex items-center justify-center"
+            className={`size-[24px] rounded-full bg-skyBlue flex items-center justify-center ${
+              !active ? "opacity-50" : ""
+            }`}
           >
             <FaAngleRight className="text-white" />
           </button>
@@ -52,7 +61,18 @@ function SliderCard() {
             nextEl: ".swiper-button-next",
           }}
           modules={[Pagination, Navigation]}
-          pagination={{ clickable: true }}
+          pagination={{
+            clickable: true,
+            renderBullet: function (index, className) {
+              return '<span class="' + className + '"></span>';
+            },
+          }}
+          onInit={(swiper) => {
+            const paginationElement = swiper.pagination.el;
+            if (paginationElement) {
+              paginationElement.style.marginBottom = "-12px";
+            }
+          }}
         >
           {[1, 2, 3].map((index) => (
             <SwiperSlide key={index}>
@@ -72,7 +92,11 @@ function SliderCard() {
                   price notification by state-owned fuel retailers. The diesel
                   price remained stable for the second consecutive day. The
                   increase on July 5, 35th in two months, took the petrol price
-                  in Delhi closer to Rs 100 per litre-mark.
+                  in Delhi closer to Rs 100 per litre-mark. increase on July 5,
+                  35th in two months, took the petrol price in Delhi closer to
+                  Rs 100 per litre-mark. increase on July 5, 35th in two months,
+                  took the petrol price in Delhi closer to Rs 100 per
+                  litre-mark.
                 </p>
               </div>
             </SwiperSlide>
