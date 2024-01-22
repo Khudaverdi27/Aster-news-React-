@@ -9,14 +9,14 @@ function FormText({
 }) {
   return (
     <>
-      <label className="mt-3 w-full flex justify-between">
+      <label className="mt-3  flex justify-between ">
         <p className="font-bold">{labelName}</p>
-        <div>
+        <div className={`${!labelName ? "w-full " : ""} `}>
           <input
             value={value}
             onChange={onChange}
             className={`${
-              labelName ? "w-[375px]" : "w-full"
+              labelName ? "w-[385px]" : "w-full"
             } outline-none border border-gray-400 ${padding} rounded-theme`}
             placeholder={placeholder}
             type={type}
