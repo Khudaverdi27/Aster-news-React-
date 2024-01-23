@@ -40,7 +40,7 @@ function RightAside() {
                 </span>
               </div>
               <div className="size-[52px]">
-                <span className="text-[#dcc674] text-[62px] size-full">
+                <span className="text-[#dcc674] text-[42px] size-full">
                   {getWeatherIcon(weatherInfo?.weather?.[0]?.icon)}
                 </span>
               </div>
