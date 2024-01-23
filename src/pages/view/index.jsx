@@ -110,7 +110,11 @@ function ViewPage() {
               </div>
             </div>
             <NewsCommetnForm fetchComments={fetchComments} id={slugNews.id} />
-            <NewsCommments items={comments} />
+            <NewsCommments
+              items={comments}
+              id={slugNews.id}
+              fetchComments={fetchComments}
+            />
             <div className="bg-[#FFE8C5] mt-12 flex justify-between items-center p-3">
               <SubscribeEmail flex={true} p={"p-1"} />
               <figure>

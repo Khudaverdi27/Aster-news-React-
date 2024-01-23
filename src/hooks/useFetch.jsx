@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ServiceCategoryFetchList } from "../services/category.service";
 import {
+  ServiceDeleteComment,
   ServiceLogin,
   ServiceNewsByAuthorFetchList,
   ServiceNewsByCategoryFetchList,
@@ -149,6 +150,14 @@ export const usePostCommentData = () => {
   const [data, fetch, loading] = useFetch(false);
   const apiFetch = async (id, params = {}) => {
     fetch(ServiceNewsPostComment, id, params);
+  };
+  return [data || false, apiFetch, loading];
+};
+
+export const useDeleteComment = () => {
+  const [data, fetch, loading] = useFetch(false);
+  const apiFetch = async (newsId, commentId) => {
+    fetch(ServiceDeleteComment, newsId, commentId);
   };
   return [data || false, apiFetch, loading];
 };

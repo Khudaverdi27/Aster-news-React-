@@ -41,3 +41,12 @@ export const ServiceNewsPostComment = async (id, params = {}) => {
 
   return res;
 };
+
+export const ServiceDeleteComment = async (newsId, commentId) => {
+  const url = NewsApi.removeComment
+    .replace(":id", newsId)
+    .replace(":commentId", commentId);
+  const res = await destroy(url);
+
+  return res;
+};

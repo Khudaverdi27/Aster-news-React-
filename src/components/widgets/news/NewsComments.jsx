@@ -2,7 +2,7 @@ import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import NewsCommentItem from "./NewsCommentItem";
 import { useState } from "react";
 
-function NewsCommments({ items = [] }) {
+function NewsCommments({ items = [], id, fetchComments }) {
   const [limit, setLimit] = useState(true);
   let comments = items?.sort((a, b) => b.id - a.id);
 
@@ -27,7 +27,12 @@ function NewsCommments({ items = [] }) {
       </div>
       <div className="mt-9 space-y-3">
         {comments.map((comment, index) => (
-          <NewsCommentItem key={index} commentItem={comment} />
+          <NewsCommentItem
+            key={index}
+            commentItem={comment}
+            id={id}
+            fetchComments={fetchComments}
+          />
         ))}
       </div>
     </div>

@@ -2,6 +2,7 @@ import Button from "@/components/ui/button";
 import { getStorage } from "../../../storage/storage";
 import { useEffect, useState } from "react";
 import { usePostCommentData } from "../../../hooks/useFetch";
+import { Spin } from "antd";
 function NewsCommetnForm({ id, fetchComments }) {
   const token = getStorage("token");
   const [comment, setComment] = useState("");
@@ -12,6 +13,7 @@ function NewsCommetnForm({ id, fetchComments }) {
   const onPostComment = () => {
     params.body = comment;
     apiFetch(id, params);
+    setComment("");
   };
   useEffect(() => {
     fetchComments(id);
@@ -24,6 +26,7 @@ function NewsCommetnForm({ id, fetchComments }) {
       </h4>
       <div className="mb-1">
         <textarea
+          value={comment}
           disabled={!token}
           onChange={(e) => {
             setComment(e.target.value.trim());
@@ -47,7 +50,7 @@ function NewsCommetnForm({ id, fetchComments }) {
           size={"lg"}
           rounded={true}
         >
-          Əlavə Et
+          {loading ? "Əlavə edilir..." : "Əlavə et"}
         </Button>
       </div>
     </div>

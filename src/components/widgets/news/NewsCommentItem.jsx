@@ -1,10 +1,20 @@
 import moment from "moment";
 import { FiTrash } from "react-icons/fi";
 import { getStorage } from "../../../storage/storage";
+import { useDeleteComment } from "../../../hooks/useFetch";
+import { useEffect } from "react";
+import { Spin } from "antd";
 
-function NewsCommentItem({ commentItem = {} }) {
+function NewsCommentItem({ commentItem = {}, id, fetchComments }) {
+  const [item, selectItem, loading] = useDeleteComment();
   const user = getStorage("user");
 
+  const deleteComment = () => {
+    selectItem(id, commentItem.id);
+  };
+  useEffect(() => {
+    fetchComments(id);
+  }, [item]);
   return (
     <div>
       <h5 className="text-skyBlue font-medium">
@@ -18,10 +28,11 @@ function NewsCommentItem({ commentItem = {} }) {
         </span>
 
         {commentItem.user.id === user.id && (
-          <button className="flex items-center text-xs text-[#ff8cbc] space-x-1">
-            <span>
-              <FiTrash />
-            </span>
+          <button
+            onClick={deleteComment}
+            className="flex items-center text-xs text-[#ff8cbc] space-x-1"
+          >
+            <span>{loading ? <Spin size="small" /> : <FiTrash />}</span>
             <span>Commenti sil</span>
           </button>
         )}
