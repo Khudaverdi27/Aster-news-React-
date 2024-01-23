@@ -1,2 +1,2 @@
 # ASTER NEWS React project
-Demo link "https://asterinfo.vercel.app/"
+Demo link "aster-news-mu.vercel.app"
