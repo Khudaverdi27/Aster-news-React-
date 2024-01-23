@@ -9,6 +9,7 @@ import {
   ServiceNewsBySlugFetchList,
   ServiceNewsFetchList,
   ServiceNewsFetchRandomList,
+  ServiceNewsPostComment,
 } from "../services/news.service";
 import { ServiceAuthorFetchList } from "../services/author.service";
 import { serviceWeather } from "../services/weather.service";
@@ -18,9 +19,9 @@ const useFetch = (state = false) => {
   const [data, setData] = useState(state);
   const [loading, setLoading] = useState(false);
 
-  const fetch = async (service, params) => {
+  const fetch = async (service, params, id = false) => {
     setLoading(true);
-    const res = await service(params);
+    const res = await service(params, id);
     setData(res);
     setLoading(false);
   };
@@ -141,5 +142,13 @@ export const useFetchLoginData = () => {
     fetch(ServiceLogin, params);
   };
 
+  return [data || false, apiFetch, loading];
+};
+
+export const usePostCommentData = () => {
+  const [data, fetch, loading] = useFetch(false);
+  const apiFetch = async (id, params = {}) => {
+    fetch(ServiceNewsPostComment, id, params);
+  };
   return [data || false, apiFetch, loading];
 };

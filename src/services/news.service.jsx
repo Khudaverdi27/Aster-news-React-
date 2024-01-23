@@ -1,4 +1,4 @@
-import { get, post } from "../utils/request";
+import { destroy, get, post } from "../utils/request";
 import NewsApi from "../api/news.api";
 
 export const ServiceNewsFetchRandomList = async (params = {}) => {
@@ -33,5 +33,11 @@ export const ServiceNewsByCommentsList = async (id) => {
 };
 export const ServiceLogin = async (params = {}) => {
   const res = await post(NewsApi.login, params);
+  return res;
+};
+
+export const ServiceNewsPostComment = async (id, params = {}) => {
+  const res = await post(NewsApi.addComment.replace(":id", id), params);
+
   return res;
 };

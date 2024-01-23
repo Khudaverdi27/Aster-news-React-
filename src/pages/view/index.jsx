@@ -23,6 +23,7 @@ function ViewPage() {
     slugNews?.category?.slug,
     4
   );
+
   const slugParams = findParam();
   useEffect(() => {
     setSlugNews();
@@ -108,7 +109,7 @@ function ViewPage() {
                 </div>
               </div>
             </div>
-            <NewsCommetnForm />
+            <NewsCommetnForm fetchComments={fetchComments} id={slugNews.id} />
             <NewsCommments items={comments} />
             <div className="bg-[#FFE8C5] mt-12 flex justify-between items-center p-3">
               <SubscribeEmail flex={true} p={"p-1"} />

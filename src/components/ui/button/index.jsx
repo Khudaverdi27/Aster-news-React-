@@ -1,6 +1,7 @@
 import classNames from "classnames";
 
 function Button({
+  disabled = false,
   children,
   property,
   rounded = false,
@@ -12,10 +13,12 @@ function Button({
 }) {
   return (
     <button
+      disabled={disabled}
       onClick={onClick}
       className={classNames([
         "btn",
         "whitespace-nowrap",
+        "disabled:opacity-50",
         property ? `btn--${property}` : "",
         { "btn--rounded": rounded, "btn--block": block },
         `btn--${size}`,

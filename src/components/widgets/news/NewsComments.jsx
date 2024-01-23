@@ -4,10 +4,10 @@ import { useState } from "react";
 
 function NewsCommments({ items = [] }) {
   const [limit, setLimit] = useState(true);
-  let comments = items.sort((a, b) => b.id - a.id);
+  let comments = items?.sort((a, b) => b.id - a.id);
 
   if (limit) {
-    comments = items.slice(0, 4);
+    comments = items?.slice(0, 4);
   }
   return (
     <div>
