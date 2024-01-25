@@ -5,9 +5,14 @@ import AuthorItem from "../../../components/widgets/author/AuthorItem";
 function AuthorSection({ title, items = [], loading }) {
   return (
     <Section title={title} loading={loading}>
-      <Row className="space-x-[25px] " gutter={[10, 16]}>
+      <Row className="sm:space-x-[25px] " gutter={[10, 16]}>
         {items.map((item, index) => (
-          <Col className="!p-0" key={index} xs={{ span: 4 }} lg={{ span: 4 }}>
+          <Col
+            className="!p-0 ml-5 sm:ml-0"
+            key={index}
+            xs={{ span: 10 }}
+            lg={{ span: 4 }}
+          >
             {loading ? (
               <>
                 <AuthorSkleton />

@@ -31,8 +31,8 @@ function FormSearch() {
   }, [text]);
 
   return (
-    <div>
-      <Space className="w-[300px] mb-0" direction="vertical">
+    <div className="flex">
+      <Space className="sm:w-[300px] w-[200px] flex mb-0" direction="vertical">
         <div className="relative">
           <Search placeholder="Axtar..." onChange={(e) => onSearch(e)} />
           {searchLoading && (

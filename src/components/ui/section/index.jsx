@@ -23,7 +23,9 @@ function Section({ title, children, loading, authorImage }) {
                 />{" "}
               </figure>
             )}
-            <h3 className="text-[20px] font-[700] mb-2">{title}</h3>
+            <h3 className="text-[20px] font-[700] mb-2 sm:ml-0 ml-5">
+              {title}
+            </h3>
           </div>
         )}
       </div>

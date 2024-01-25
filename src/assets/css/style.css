@@ -2,7 +2,7 @@ body{
     @apply bg-[#F4F9F8]
 }
 .menu-link{
-    @apply flex items-center space-x-9 text-[17px]
+    @apply flex items-center  sm:space-x-9 space-x-1 text-[17px] 
 }
 .menu-link .active {
   @apply border-b-2 border-skyBlue ;

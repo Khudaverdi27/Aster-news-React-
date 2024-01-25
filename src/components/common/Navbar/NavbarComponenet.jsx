@@ -32,7 +32,7 @@ function Icon({ slug }) {
   return icons[slug];
 }
 
-function NavbarComponent() {
+function NavbarComponent({ classForResponsive }) {
   const [categories, fetchCategories, loading] = useFetchCategoryList();
 
   saveStorage("categories", categories);
@@ -44,7 +44,7 @@ function NavbarComponent() {
   }, []);
   return (
     <>
-      <div className="pr-[17px] ">
+      <div className={`pr-[17px] ${classForResponsive}`}>
         {categories.map((category, index) => (
           <div key={index}>
             {loading ? (
