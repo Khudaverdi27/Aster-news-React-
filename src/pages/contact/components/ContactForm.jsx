@@ -37,7 +37,7 @@ const ContactForm = () => (
   >
     <Form.Item
       name={["user", "name"]}
-      label="Name"
+      label="Ad"
       rules={[
         {
           required: true,
@@ -59,7 +59,7 @@ const ContactForm = () => (
     </Form.Item>
     <Form.Item
       name={["user", "age"]}
-      label="Age"
+      label="Yaş"
       rules={[
         {
           type: "number",
@@ -73,7 +73,7 @@ const ContactForm = () => (
     <Form.Item name={["user", "website"]} label="Website">
       <Input />
     </Form.Item>
-    <Form.Item name={["user", "introduction"]} label="Introduction">
+    <Form.Item name={["user", "introduction"]} label="Təklif və ya irad">
       <Input.TextArea />
     </Form.Item>
     <Form.Item
@@ -83,7 +83,7 @@ const ContactForm = () => (
       }}
     >
       <Button className="text-skyBlue" type="primary" htmlType="submit">
-        Submit
+        Təsdiqlə
       </Button>
     </Form.Item>
   </Form>

@@ -1,6 +1,7 @@
 import moment from "moment";
 import { FiShare } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import Popup from "../popup";
 function NewsItem({ item }) {
   const handleLinkClick = () => {
     window.scrollTo(0, 0);
@@ -36,7 +37,7 @@ function NewsItem({ item }) {
             className="flex items-center text-[12px] space-x-[8px] text-primary font-medium"
           >
             <FiShare />
-            <span>Paylaş</span>
+            <Popup>Paylaş</Popup>
           </a>
         </div>
       </div>

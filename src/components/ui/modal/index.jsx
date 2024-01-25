@@ -52,12 +52,12 @@ const ModalForLogin = () => {
   return (
     <>
       <Button rounded={true} border={true} onClick={showModal}>
-        Login
+        Giriş
       </Button>
       <Modal
         title={
           <h3 className="font-bold text-[18px] text-center mb-10">
-            Login your account
+            Hesabınıza giriş edin
           </h3>
         }
         open={isModalOpen}
@@ -88,7 +88,7 @@ const ModalForLogin = () => {
               onChange={onChangePassword}
               type={"password"}
               padding={"p-1"}
-              labelName={"Password"}
+              labelName={"Şifrə"}
               errorMsg={
                 data && (
                   <p className="text-red-500">{data?.message?.password}</p>
