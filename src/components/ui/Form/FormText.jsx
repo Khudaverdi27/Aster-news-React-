@@ -10,13 +10,13 @@ function FormText({
   return (
     <>
       <label className="mt-3  flex justify-between ">
-        <p className="font-bold">{labelName}</p>
+        <p className="font-bold ">{labelName}</p>
         <div className={`${!labelName ? "w-full " : ""} `}>
           <input
             value={value}
             onChange={onChange}
             className={`${
-              labelName ? "w-[385px]" : "w-full"
+              labelName ? "sm:w-[385px] w-[270px] " : "w-full "
             } outline-none border border-gray-400 ${padding} rounded-theme`}
             placeholder={placeholder}
             type={type}

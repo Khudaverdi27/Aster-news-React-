@@ -58,7 +58,7 @@ function NavbarComponent({ classForResponsive, setOpen }) {
                 onClick={setOpen ? () => setOpen(false) : ""}
                 to={"/search/" + category.slug}
                 className={classNames({
-                  "flex items-center h-[46px] rounded-tr-full relative rounded-br-full pl-[33px] text-amberBlack space-x-[22px]": true,
+                  "flex items-center h-[50px] rounded-tr-full relative rounded-br-full pl-[33px] text-amberBlack space-x-[22px]": true,
                   "bg-[#e0f0f8] text-skyBlue font-bold after:content-[''] after:absolute after:left-[15px] after:size-2 after:rounded-full after:bg-skyBlue":
                     params === category.slug,
                 })}

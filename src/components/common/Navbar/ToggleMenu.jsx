@@ -34,6 +34,7 @@ const ToggleMenu = () => {
         key={placement}
         closable={false}
         open={open}
+        getContainer={false}
       >
         <NavbarComponent
           setOpen={setOpen}
