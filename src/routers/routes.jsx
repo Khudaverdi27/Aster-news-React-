@@ -7,10 +7,11 @@ import AppLayout from "../layouts/AppLayout";
 import ErrorPage from "../pages/error";
 import AuthorPage from "../pages/author";
 import ContactLayout from "../layouts/ContactLayout";
+import AboutLayout from "../layouts/AboutLayout";
 
 export const routes = [
   { path: "/", element: <HomePage />, layout: "AppLayout" },
-  { path: "/about", element: <AboutPage />, layout: "AppLayout" },
+  { path: "/about", element: <AboutPage />, layout: "AboutLayout" },
   { path: "/contact", element: <ContactPage />, layout: "ContactLayout" },
   { path: "/search/:slug", element: <SearchPage />, layout: "AppLayout" },
   { path: "/view/:slug", element: <ViewPage />, layout: "AppLayout" },
@@ -21,8 +22,10 @@ export const routes = [
 routes.map((route) => {
   if (route.layout === "AppLayout") {
     route.element = <AppLayout>{route.element}</AppLayout>;
-  } else {
+  } else if (route.layout === "ContactLayout") {
     route.element = <ContactLayout>{route.element}</ContactLayout>;
+  } else {
+    route.element = <AboutLayout>{route.element}</AboutLayout>;
   }
 
   return route;

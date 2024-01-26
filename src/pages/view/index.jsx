@@ -46,7 +46,7 @@ function ViewPage() {
   };
 
   return (
-    <div className="sm:mt-24 mt-[150px]  px-3">
+    <div className="lg:mt-24 mt-[150px]  px-3">
       {slugLoading ? (
         <div className="flex items-center justify-center min-h-80">
           <Spin size="large" />
@@ -117,7 +117,7 @@ function ViewPage() {
             />
             <div className="bg-[#FFE8C5] mt-12 flex justify-between items-center p-3">
               <SubscribeEmail flex={true} p={"p-1"} />
-              <figure className="w-[120px] mt-5 sm:mt-0">
+              <figure className="w-[120px] mt-5 lg:mt-0">
                 <img src={email} alt="" />
               </figure>
             </div>

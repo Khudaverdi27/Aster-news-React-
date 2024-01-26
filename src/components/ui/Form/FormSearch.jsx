@@ -31,8 +31,11 @@ function FormSearch() {
   }, [text]);
 
   return (
-    <div className="flex">
-      <Space className="sm:w-[300px] w-[310px] flex mb-0" direction="vertical">
+    <div className="flex ">
+      <Space
+        className="lg:w-[300px] md:ml-16 md:w-[420px] sm:w-[590px] w-80   flex mb-0"
+        direction="vertical"
+      >
         <div className="relative">
           <Search placeholder="Axtar..." onChange={(e) => onSearch(e)} />
           {searchLoading && (
@@ -46,7 +49,7 @@ function FormSearch() {
       {isOpen && (
         <ul
           ref={ref}
-          className="bg-white rounded-theme mt-1 p-1 absolute sm:left-2 left-0 top-[54px] sm:min-w-[300px] z-10 border border-gray-400 divide-y divide-gray-200 text-[14px]"
+          className="bg-white rounded-theme mt-1 p-1 absolute lg:left-2 left-0 top-[54px] lg:min-w-[300px] z-10 border border-gray-400 divide-y divide-gray-200 text-[14px]"
         >
           {searchRes.length > 0 ? (
             searchRes.map((searchedItem, index) => (

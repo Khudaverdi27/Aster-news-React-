@@ -2,8 +2,8 @@ import { Skeleton } from "antd";
 
 function Section({ title, children, loading, authorImage }) {
   return (
-    <section className={loading ? "" : "mb-[40px]"}>
-      <div className="sm:mt-24 ">
+    <section>
+      <div className="lg:mt-24 ">
         {loading ? (
           <Skeleton
             paragraph={{
@@ -22,7 +22,7 @@ function Section({ title, children, loading, authorImage }) {
                 />
               </figure>
             )}
-            <h3 className="text-[20px] font-[700] mt-[139px] mb-2 sm:mt-0 sm:ml-0 ml-2">
+            <h3 className="text-[20px] font-[700] mt-[139px] mb-2 lg:mt-0 lg:ml-0 ml-2">
               {title}
             </h3>
           </div>

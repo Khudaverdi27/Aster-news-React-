@@ -12,10 +12,16 @@ function NewsSection({
 }) {
   return (
     <Section title={title} loading={loading} authorImage={authorImage}>
-      {cards && <RightAside visible={"block sm:hidden"} />}
+      {cards && <RightAside visible={"block lg:hidden"} />}
       <Row gutter={[16, 16]}>
         {items.map((item, index) => (
-          <Col key={index} xs={{ span: 24 }} lg={{ span: 12 }}>
+          <Col
+            key={index}
+            xs={{ span: 24 }}
+            sm={24}
+            md={{ span: 12 }}
+            lg={{ span: 12 }}
+          >
             {loading ? (
               <>
                 <NewsSkleton />

@@ -16,7 +16,9 @@ function RightAside({ visible }) {
   }, []);
 
   return (
-    <aside className={`space-y-[15px] sm:mt-24 mb-6 max-w-[364px] ${visible} `}>
+    <aside
+      className={`space-y-[15px] lg:mt-24 mb-6 md:max-w-[200px] lg:max-w-[364px] min-w-full ${visible} `}
+    >
       <div className="right-section-cards  bg-white shadow-theme ">
         {weatherLoading ? (
           <NewsSkleton image={false} />
@@ -89,8 +91,8 @@ function RightAside({ visible }) {
           </Button>
         </div>
       </div>
-      <SliderCard className={"sm:block hidden"} />
-      <SubscribeEmail className={"sm:block hidden"} block={true} p={"p-2"} />
+      <SliderCard className={"lg:block hidden"} />
+      <SubscribeEmail className={"lg:block hidden"} block={true} p={"p-2"} />
     </aside>
   );
 }

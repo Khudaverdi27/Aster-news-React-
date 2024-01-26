@@ -4,7 +4,7 @@ function Logo() {
   return (
     <div>
       <Link
-        className="flex pl-[31px] items-center space-x-[15px] sm:py-[28px]"
+        className="flex pl-[31px] items-center space-x-[15px] lg:py-[28px]"
         to={"/"}
       >
         <img src={logo} alt="" />

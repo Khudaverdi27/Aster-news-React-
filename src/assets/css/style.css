@@ -1,12 +1,12 @@
-body{
-    @apply bg-[#F4F9F8]
+body {
+  @apply bg-[#F4F9F8];
 }
-.menu-link{
-    @apply flex items-center  sm:space-x-9 space-x-1 text-[17px] 
+.menu-link {
+  @apply flex items-center md:space-x-10 mr-1 lg:space-x-9 space-x-2 text-[17px];
 }
 .menu-link .active {
-  @apply border-b-2 border-skyBlue ;
+  @apply border-b-2 border-skyBlue;
 }
-.right-section-cards{
-  @apply px-[15px] py-[14px] rounded-theme
+.right-section-cards {
+  @apply px-[15px] py-[14px] rounded-theme;
 }

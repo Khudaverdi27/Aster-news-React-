@@ -16,7 +16,7 @@ function FormText({
             value={value}
             onChange={onChange}
             className={`${
-              labelName ? "sm:w-[385px] w-[270px] " : "w-full "
+              labelName ? "lg:w-[385px] w-[270px] " : "w-full "
             } outline-none border border-gray-400 ${padding} rounded-theme`}
             placeholder={placeholder}
             type={type}

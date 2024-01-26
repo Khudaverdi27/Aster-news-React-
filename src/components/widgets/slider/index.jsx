@@ -24,14 +24,15 @@ function SliderCard({ className }) {
   };
   return (
     <div
-      className={`right-section-cards space-y-[13px]  bg-white shadow-theme max-w-[355px] ${className}`}
+      className={`right-section-cards space-y-[13px]  bg-white shadow-theme max-w-[355px] 
+      min-w-full ${className}`}
     >
       <div className="flex justify-between border-b pb-2">
         <div className="flex items-center space-x-[11px]">
           <span className="size-[24px]">
             <LuFileText className="size-full" />
           </span>
-          <span>Sürətli Qeydlər</span>
+          <span>Qısa məqalələr</span>
         </div>
         <div className="flex items-center space-x-2">
           <button

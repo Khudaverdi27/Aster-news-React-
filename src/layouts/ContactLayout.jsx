@@ -5,7 +5,7 @@ import ContactPage from "../pages/contact";
 import { Col, Row } from "antd";
 function ContactLayout() {
   return (
-    <main className="sm:w-[1300px] mx-auto  ">
+    <main className="lg:w-[1300px] mx-auto  ">
       <Row>
         <Col
           className="flex space-x-4 mb-4"
@@ -15,7 +15,7 @@ function ContactLayout() {
           lg={24}
           xl={24}
         >
-          <div className="sm:block hidden">
+          <div className="lg:block hidden">
             <Logo />
           </div>
           <div className="mt-2">

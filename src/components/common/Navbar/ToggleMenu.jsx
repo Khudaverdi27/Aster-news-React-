@@ -17,7 +17,7 @@ const ToggleMenu = () => {
     setOpen(false);
   };
   return (
-    <div className="block sm:hidden ">
+    <div className="block lg:hidden md:hidden ">
       <Button type="primary" onClick={showDrawer}>
         <FaBars className="text-gray-500" />
       </Button>
@@ -38,7 +38,7 @@ const ToggleMenu = () => {
       >
         <NavbarComponent
           setOpen={setOpen}
-          classForResponsive={"block sm:hidden"}
+          classForResponsive={"block lg:hidden"}
         />
         {/* <Subscription className={"mt-[40px]"} /> */}
       </Drawer>

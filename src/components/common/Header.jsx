@@ -12,15 +12,15 @@ function Header() {
   const user = getStorage("user");
   return (
     <div
-      className="sm:flex sm:justify-between pt-[23px] pb-[40px] top-[-8px] fixed bg-[#F4F9F8]
-   sm:w-[1024px] w-full z-50 left-0 sm:left-[301px]"
+      className="lg:flex lg:justify-between pt-[23px] pb-[40px] top-[-8px] fixed bg-[#F4F9F8]
+   lg:w-[1024px] w-full z-50 left-0 lg:left-[301px] md:left-[240px] md:w-[1024px]"
     >
       <div className="flex w-10 space-x-2 items-center">
         <ToggleMenu />
         <FormSearch />
       </div>
-      <div className="flex items-center sm:space-x-5 sm:mt-0 mt-5 justify-between mx-3 ">
-        <div className="order-1 sm:text-[16px] text-sm sm:ml-10">
+      <div className="flex items-center ml-5 md:ml-16 lg:space-x-5  lg:mt-0 mt-5 lg:justify-between lg:mx-3 ">
+        <div className="order-1 lg:text-[16px] md:ml-2 text-sm lg:ml-10">
           {token ? (
             <DropdownMenu
               helperBlock={
@@ -40,7 +40,7 @@ function Header() {
             >
               <span className="flex items-center  ml-2">
                 <span>
-                  <FiUser className="sm:text-[24px] mr-1 text-[16px]" />
+                  <FiUser className="lg:text-[24px] mr-1 text-[16px]" />
                 </span>
                 <span className="whitespace-nowrap mt-1">Profilim</span>
               </span>
@@ -49,12 +49,12 @@ function Header() {
             <ModalForLogin />
           )}
         </div>
-        <div className=" menu-link">
+        <div className=" menu-link ">
           {menus.map((menu, index) => (
             <NavLink
               to={menu.path}
               key={index}
-              className="flex items-center sm:text-[16px] text-sm "
+              className="flex items-center lg:text-[16px] md:text-[16px] text-sm "
             >
               <span>{menu.icon}</span>
               <span className="flex items-center px-1 whitespace-nowrap">

@@ -7,7 +7,7 @@ function SubscribeEmail({ flex, p, block, className }) {
         className={`${
           flex
             ? `right-section-cards space-y-3 text-[15px] `
-            : `bg-white p-3 ${className} max-w-[355px] mt-5`
+            : `bg-white p-3 ${className} lg:max-w-[364px] min-w-full mt-5`
         }`}
       >
         <p className={`${flex ? "font-bold text-[15px]" : ""}`}>
