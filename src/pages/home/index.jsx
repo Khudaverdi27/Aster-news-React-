@@ -29,6 +29,7 @@ function HomePage() {
           title={"Ən son xəbərlər"}
           items={newsList}
           loading={newsLoading}
+          cards={true}
         />
       </div>
       <div>

@@ -46,7 +46,7 @@ function ViewPage() {
   };
 
   return (
-    <div className="sm:mt-24 mt-5 px-3">
+    <div className="sm:mt-24 mt-[150px]  px-3">
       {slugLoading ? (
         <div className="flex items-center justify-center min-h-80">
           <Spin size="large" />
@@ -121,7 +121,7 @@ function ViewPage() {
                 <img src={email} alt="" />
               </figure>
             </div>
-            <NewsSection items={moreNews} title={"More news for you"} />
+            <NewsSection items={moreNews} title={"Seçilmişlər"} />
           </>
         )
       )}

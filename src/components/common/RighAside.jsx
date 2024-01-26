@@ -16,8 +16,8 @@ function RightAside({ visible }) {
   }, []);
 
   return (
-    <aside className={`space-y-[15px] mt-24 max-w-[364px] ${visible} `}>
-      <div className="right-section-cards  bg-white shadow-theme mt-36 sm:mt-0">
+    <aside className={`space-y-[15px] sm:mt-24 mb-6 max-w-[364px] ${visible} `}>
+      <div className="right-section-cards  bg-white shadow-theme ">
         {weatherLoading ? (
           <NewsSkleton image={false} />
         ) : (

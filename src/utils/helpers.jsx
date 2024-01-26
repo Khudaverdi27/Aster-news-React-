@@ -10,7 +10,7 @@ import { IoThunderstormOutline } from "react-icons/io5";
 import { IoThunderstorm } from "react-icons/io5";
 import { FaRegSnowflake } from "react-icons/fa";
 import { RiMistFill } from "react-icons/ri";
-import { FaMoon } from "react-icons/fa";
+import { BsMoonStars } from "react-icons/bs";
 import { useParams } from "react-router-dom";
 
 export const objectToQueryString = (obj) => {
@@ -35,7 +35,7 @@ export const getPosition = () =>
 export const getWeatherIcon = (key) => {
   const icons = {
     "01d": <IoSunnyOutline />,
-    "01n": <FaMoon />,
+    "01n": <BsMoonStars />,
     "02d": <CiCloudSun />,
     "02n": <FaCloudMoon />,
     "03d": <CiCloudOn />,

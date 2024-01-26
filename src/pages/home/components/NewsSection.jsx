@@ -2,9 +2,17 @@ import NewsSkleton from "@/components/widgets/news/NewsSkleton";
 import NewsItem from "@/components/widgets/news/NewsItem";
 import Section from "@/components/ui/section";
 import { Col, Row } from "antd";
-function NewsSection({ items, loading, title, authorImage = false }) {
+import RightAside from "../../../components/common/RighAside";
+function NewsSection({
+  items,
+  loading,
+  title,
+  authorImage = false,
+  cards = false,
+}) {
   return (
     <Section title={title} loading={loading} authorImage={authorImage}>
+      {cards && <RightAside visible={"block sm:hidden"} />}
       <Row gutter={[16, 16]}>
         {items.map((item, index) => (
           <Col key={index} xs={{ span: 24 }} lg={{ span: 12 }}>

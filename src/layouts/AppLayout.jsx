@@ -19,7 +19,6 @@ function AppLayout({ children }) {
         <Header />
         <div className="flex sm:gap-x-[45px]">
           <div className="flex-1">
-            <RightAside visible={"block sm:hidden"} />
             {children}
             <SliderCard className={"sm:hidden block"} />
             <SubscribeEmail

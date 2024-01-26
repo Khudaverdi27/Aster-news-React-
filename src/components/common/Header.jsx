@@ -12,8 +12,8 @@ function Header() {
   const user = getStorage("user");
   return (
     <div
-      className="sm:flex sm:justify-between pt-[23px] pb-[40px] top-0 fixed bg-[#F4F9F8]
-   sm:w-[1024px] w-full z-50 "
+      className="sm:flex sm:justify-between pt-[23px] pb-[40px] top-[-8px] fixed bg-[#F4F9F8]
+   sm:w-[1024px] w-full z-50 left-0 sm:left-[301px]"
     >
       <div className="flex w-10 space-x-2 items-center">
         <ToggleMenu />
