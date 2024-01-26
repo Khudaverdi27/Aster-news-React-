@@ -32,26 +32,26 @@ export const getPosition = () =>
     navigator.geolocation.getCurrentPosition(resolve, reject);
   });
 
- export const getWeatherIcon = (key) => {
-    const icons = {
-        "01d":   <IoSunnyOutline  />,
-        "01n": <FaMoon />,
-        "02d": <CiCloudSun />,
-        "02n": <FaCloudMoon />,
-        "03d": <CiCloudOn />,
-        "03n": <FaCloud />        ,
-        "04d": <IoIosCloudOutline /> ,
-        "04n": <IoIosCloudOutline />,
-        "09d": <WiDayRainWind />  ,
-        "09n": <WiNightAltRain />,
-        "10d": <LuCloudRainWind />,
-        "10n": <IoIosRainy />,
-        "11d": <IoThunderstormOutline /> ,
-        "11n": <IoThunderstorm />,
-        "13d": <FaRegSnowflake />,
-        "13n": <FaRegSnowflake />,
-        "50d": <RiMistFill />   ,
-        "50n": <RiMistFill /> ,
-    }
-    return icons[key]
-}
+export const getWeatherIcon = (key) => {
+  const icons = {
+    "01d": <IoSunnyOutline />,
+    "01n": <FaMoon />,
+    "02d": <CiCloudSun />,
+    "02n": <FaCloudMoon />,
+    "03d": <CiCloudOn />,
+    "03n": <FaCloud />,
+    "04d": <IoIosCloudOutline />,
+    "04n": <IoIosCloudOutline />,
+    "09d": <WiDayRainWind />,
+    "09n": <WiNightAltRain />,
+    "10d": <LuCloudRainWind />,
+    "10n": <IoIosRainy />,
+    "11d": <IoThunderstormOutline />,
+    "11n": <IoThunderstorm />,
+    "13d": <FaRegSnowflake />,
+    "13n": <FaRegSnowflake />,
+    "50d": <RiMistFill />,
+    "50n": <RiMistFill />,
+  };
+  return icons[key];
+};
