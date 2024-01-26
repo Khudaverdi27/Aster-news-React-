@@ -46,7 +46,7 @@ function FormSearch() {
       {isOpen && (
         <ul
           ref={ref}
-          className="bg-white rounded-theme mt-1 p-1 absolute min-w-[300px] z-10 border border-gray-400 divide-y divide-gray-200 text-[14px]"
+          className="bg-white rounded-theme mt-1 p-1 absolute sm:left-2 left-0 top-[54px] sm:min-w-[300px] z-10 border border-gray-400 divide-y divide-gray-200 text-[14px]"
         >
           {searchRes.length > 0 ? (
             searchRes.map((searchedItem, index) => (
@@ -56,8 +56,8 @@ function FormSearch() {
                 className=" flex justify-between items-center"
                 key={index}
               >
-                <p>{searchedItem.title}</p>
-                <figure className="size-[34px] m-1">
+                <p className="line-clamp-1">{searchedItem.title}</p>
+                <figure className="size-[34px] m-1 shrink-0">
                   <img
                     className="img-cover rounded-sm"
                     src={searchedItem.photo}
@@ -67,7 +67,9 @@ function FormSearch() {
               </Link>
             ))
           ) : (
-            <li className="text-red-500">Axtardığınız xəbər tapılmadı...</li>
+            <li className="text-red-500 w-[355px]">
+              Axtardığınız xəbər tapılmadı...
+            </li>
           )}
         </ul>
       )}

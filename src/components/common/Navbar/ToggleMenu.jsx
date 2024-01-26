@@ -22,6 +22,7 @@ const ToggleMenu = () => {
         <FaBars className="text-gray-500" />
       </Button>
       <Drawer
+        className="h-full"
         title={
           <div className="flex justify-between">
             <Logo />{" "}
