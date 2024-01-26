@@ -8,5 +8,5 @@ body{
   @apply border-b-2 border-skyBlue ;
 }
 .right-section-cards{
-  @apply px-[15px] py-[14px] rounded-theme 
+  @apply px-[15px] py-[14px] rounded-theme
 }

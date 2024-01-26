@@ -1,11 +1,13 @@
 import FormText from "../../ui/Form/FormText";
 import Button from "@/components/ui/button";
-function SubscribeEmail({ flex, p, block }) {
+function SubscribeEmail({ flex, p, block, className }) {
   return (
     <>
       <div
         className={`${
-          flex ? "right-section-cards space-y-3 text-[15px] " : "bg-white p-3"
+          flex
+            ? `right-section-cards space-y-3 text-[15px] `
+            : `bg-white p-3 ${className} max-w-[355px] mt-5`
         }`}
       >
         <p className={`${flex ? "font-bold text-[15px]" : ""}`}>

@@ -8,7 +8,7 @@ import { getWeatherIcon } from "../../utils/helpers";
 import NewsSkleton from "../widgets/news/NewsSkleton";
 import SubscribeEmail from "../widgets/subscription/subscribe";
 import { Link } from "react-router-dom";
-function RightAside() {
+function RightAside({ visible }) {
   const [weatherInfo, setWeather, weatherLoading] = useFetchWeatherData();
   const [fahrenheit, setFahrenheit] = useState(false);
   useEffect(() => {
@@ -16,8 +16,8 @@ function RightAside() {
   }, []);
 
   return (
-    <aside className="space-y-[15px] mt-24 sticky top-24">
-      <div className="right-section-cards  bg-white shadow-theme">
+    <aside className={`space-y-[15px] mt-24 max-w-[360px] ${visible} `}>
+      <div className="right-section-cards  bg-white shadow-theme mt-36 sm:mt-0">
         {weatherLoading ? (
           <NewsSkleton image={false} />
         ) : (
@@ -28,7 +28,7 @@ function RightAside() {
               </p>
               <FiCrosshair />
             </div>
-            <div className="flex justify-between py-[15px]">
+            <div className="flex justify-between items-center py-[15px]">
               <div>
                 <p className="text-[15px]">{weatherInfo?.weather?.[0]?.main}</p>
                 <span className="text-[26px] font-bold">
@@ -73,7 +73,7 @@ function RightAside() {
           </span>
           <p className="text-[15px]">Məqalə yazarı ol</p>
         </div>
-        <div className="flex ">
+        <div className="flex items-center justify-between">
           <p className="text-xs mr-4 opacity-60">
             Məqalə yazaraq qazanmağa başla
           </p>
@@ -89,8 +89,8 @@ function RightAside() {
           </Button>
         </div>
       </div>
-      <SliderCard />
-      <SubscribeEmail block={true} p={"p-2"} />
+      <SliderCard className={"sm:block hidden"} />
+      <SubscribeEmail className={"sm:block hidden"} block={true} p={"p-2"} />
     </aside>
   );
 }

@@ -3,7 +3,10 @@ import { Button, Drawer } from "antd";
 import { FaBars } from "react-icons/fa";
 import NavbarComponent from "./NavbarComponenet";
 import Logo from "../Logo";
-const Test = () => {
+import Subscription from "../../widgets/subscription";
+import { IoMdClose } from "react-icons/io";
+
+const ToggleMenu = () => {
   const [open, setOpen] = useState(false);
   const [placement, setPlacement] = useState("left");
   const showDrawer = () => {
@@ -19,16 +22,26 @@ const Test = () => {
         <FaBars className="text-gray-500" />
       </Button>
       <Drawer
-        title={<Logo />}
+        title={
+          <div className="flex justify-between">
+            <Logo />{" "}
+            <Button onClick={onClose}>
+              <IoMdClose className="text-[20px] text-skyBlue" />
+            </Button>
+          </div>
+        }
         placement={placement}
-        closable={false}
-        onClose={onClose}
         key={placement}
+        closable={false}
         open={open}
       >
-        <NavbarComponent classForResponsive={"block sm:hidden"} />
+        <NavbarComponent
+          setOpen={setOpen}
+          classForResponsive={"block sm:hidden"}
+        />
+        {/* <Subscription className={"mt-[40px]"} /> */}
       </Drawer>
     </div>
   );
 };
-export default Test;
+export default ToggleMenu;

@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useRef } from "react";
 import { Pagination, Navigation } from "swiper/modules";
 import { useState } from "react";
-function SliderCard() {
+function SliderCard({ className }) {
   const [active, setActive] = useState(false);
 
   const swiperRef = useRef(null);
@@ -23,7 +23,9 @@ function SliderCard() {
     }
   };
   return (
-    <div className="right-section-cards space-y-[13px]  bg-white shadow-theme">
+    <div
+      className={`right-section-cards space-y-[13px]  bg-white shadow-theme max-w-[355px] ${className}`}
+    >
       <div className="flex justify-between border-b pb-2">
         <div className="flex items-center space-x-[11px]">
           <span className="size-[24px]">
@@ -50,7 +52,7 @@ function SliderCard() {
           </button>
         </div>
       </div>
-      <div className="text-xs opacity-60 space-y-6">
+      <div className="text-xs opacity-60 ">
         <Swiper
           ref={swiperRef}
           slidesPerView={1}
@@ -86,7 +88,7 @@ function SliderCard() {
                   in Delhi closer to Rs 100 per litre-mark.
                 </p>
 
-                <p>
+                <p className="pb-2">
                   The price of petrol remained unchanged on July 6 after
                   reaching a new record high on the previous day, according to a
                   price notification by state-owned fuel retailers. The diesel

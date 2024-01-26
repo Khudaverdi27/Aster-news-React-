@@ -51,13 +51,7 @@ const ModalForLogin = () => {
 
   return (
     <>
-      <Button
-        padding={"6px"}
-        size="sm"
-        rounded={true}
-        border={true}
-        onClick={showModal}
-      >
+      <Button size="sm" rounded={true} border={true} onClick={showModal}>
         Giriş
       </Button>
       <Modal

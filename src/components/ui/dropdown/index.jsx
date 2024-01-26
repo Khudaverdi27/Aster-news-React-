@@ -7,7 +7,7 @@ import { removeStorage } from "../../../storage/storage";
 const items = [
   {
     key: "profile",
-    label: "Profil",
+    label: "Hesab",
     icon: <FiUser />,
   },
   {

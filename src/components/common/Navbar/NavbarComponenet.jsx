@@ -15,6 +15,7 @@ import { NavLink } from "react-router-dom";
 import { findParam } from "../../../utils/helpers";
 import { saveStorage } from "../../../storage/storage";
 import NavbarSkleton from "./NavbarSkleton";
+import Logo from "../Logo";
 
 function Icon({ slug }) {
   const icons = {
@@ -32,7 +33,7 @@ function Icon({ slug }) {
   return icons[slug];
 }
 
-function NavbarComponent({ classForResponsive }) {
+function NavbarComponent({ classForResponsive, setOpen }) {
   const [categories, fetchCategories, loading] = useFetchCategoryList();
 
   saveStorage("categories", categories);
@@ -45,12 +46,16 @@ function NavbarComponent({ classForResponsive }) {
   return (
     <>
       <div className={`pr-[17px] ${classForResponsive}`}>
+        <div className="hidden sm:inline-block">
+          <Logo />
+        </div>
         {categories.map((category, index) => (
           <div key={index}>
             {loading ? (
               <NavbarSkleton />
             ) : (
               <NavLink
+                onClick={setOpen ? () => setOpen(false) : ""}
                 to={"/search/" + category.slug}
                 className={classNames({
                   "flex items-center h-[50px] rounded-tr-full relative rounded-br-full pl-[33px] text-amberBlack space-x-[22px]": true,
