@@ -19,7 +19,7 @@ function Header() {
         <ToggleMenu />
         <FormSearch />
       </div>
-      <div className="flex items-center ml-5 md:ml-16 lg:space-x-5  lg:mt-0 mt-5 lg:justify-between lg:mx-3 ">
+      <div className="flex items-center ml-1 md:ml-16 lg:space-x-5  lg:mt-0 mt-5 lg:justify-between lg:mx-3 ">
         <div className="order-1 lg:text-[16px] md:ml-2 text-sm lg:ml-10">
           {token ? (
             <DropdownMenu
@@ -54,7 +54,7 @@ function Header() {
             <NavLink
               to={menu.path}
               key={index}
-              className="flex items-center lg:text-[16px] md:text-[16px] text-sm "
+              className="flex items-center lg:text-[16px] md:text-[16px] text-[15px] "
             >
               <span>{menu.icon}</span>
               <span className="flex items-center px-1 whitespace-nowrap">
