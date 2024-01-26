@@ -38,11 +38,11 @@ function Header() {
                 </div>
               }
             >
-              <span className="flex items-center space-x-[13px]">
+              <span className="flex items-center  ml-2">
                 <span>
-                  <FiUser className="sm:text-[24px] text-[20px]" />
+                  <FiUser className="sm:text-[24px] mr-1 text-[16px]" />
                 </span>
-                <span className="whitespace-nowrap">Profilim</span>
+                <span className="whitespace-nowrap mt-1">Profilim</span>
               </span>
             </DropdownMenu>
           ) : (
@@ -54,7 +54,7 @@ function Header() {
             <NavLink
               to={menu.path}
               key={index}
-              className="flex items-center sm:text-[16px] text-sm space-x-1"
+              className="flex items-center sm:text-[16px] text-sm "
             >
               <span>{menu.icon}</span>
               <span className="flex items-center px-1 whitespace-nowrap">

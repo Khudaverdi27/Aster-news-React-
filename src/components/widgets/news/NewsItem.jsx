@@ -32,13 +32,10 @@ function NewsItem({ item }) {
           <span>{moment(item.published_date).format("DD-MM-YYYY HH:mm")}</span>
         </div>
         <div>
-          <a
-            href="#"
-            className="flex items-center text-[12px] space-x-[8px] text-primary font-medium"
-          >
+          <button className="flex items-center text-[12px] space-x-[8px] text-primary font-medium">
             <FiShare />
             <Popup>Paylaş</Popup>
-          </a>
+          </button>
         </div>
       </div>
     </article>

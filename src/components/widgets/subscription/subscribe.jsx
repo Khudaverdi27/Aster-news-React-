@@ -17,7 +17,12 @@ function SubscribeEmail({ flex, p, block, className }) {
           className={`space-y-3 ${flex ? "flex items-center space-x-3 " : ""}`}
         >
           <FormText type={"email"} padding={p} placeholder={"Email daxil et"} />
-          <Button block={block} rounded={"rounded-theme"} property={"sky-blue"}>
+          <Button
+            block={block}
+            padding={true}
+            rounded={"rounded-theme"}
+            property={"sky-blue"}
+          >
             Abunə ol
           </Button>
         </div>
