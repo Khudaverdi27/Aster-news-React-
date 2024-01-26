@@ -17,7 +17,7 @@ const ToggleMenu = () => {
     setOpen(false);
   };
   return (
-    <div className="block sm:hidden">
+    <div className="block sm:hidden ">
       <Button type="primary" onClick={showDrawer}>
         <FaBars className="text-gray-500" />
       </Button>

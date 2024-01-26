@@ -54,7 +54,7 @@ function Header() {
             <NavLink
               to={menu.path}
               key={index}
-              className="flex items-center sm:text-[16px] text-sm space-x-2"
+              className="flex items-center sm:text-[16px] text-sm space-x-1"
             >
               <span>{menu.icon}</span>
               <span className="flex items-center px-1 whitespace-nowrap">

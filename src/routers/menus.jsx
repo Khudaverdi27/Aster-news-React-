@@ -9,7 +9,7 @@ export default [
     icon: <FiHome />,
   },
   {
-    name: "Info",
+    name: "Haqqımızda",
     path: "/about",
     icon: <CiCircleInfo />,
   },
