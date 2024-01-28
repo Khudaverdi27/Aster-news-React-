@@ -1,5 +1,6 @@
 import React from "react";
-import { Button, Form, Input, Select, notification } from "antd";
+import { Button, Form, Input, Select } from "antd";
+import { useNotify } from "../../../context/notification";
 const { Option } = Select;
 const layout = {
   labelCol: {
@@ -24,13 +25,8 @@ const validateMessages = {
 /* eslint-enable no-template-curly-in-string */
 
 function ContactForm() {
-  const [api, contextHolder] = notification.useNotification();
-  const openNotificationWithIcon = (type) => {
-    api[type]({
-      message: "Təşəkkürlər",
-      description: "Müraciətiniz uğurla qeydə alındı",
-    });
-  };
+  const { contextHolder, openNotificationWithIcon } = useNotify();
+
   const onFinish = (values) => {
     console.log(values);
     openNotificationWithIcon("success");

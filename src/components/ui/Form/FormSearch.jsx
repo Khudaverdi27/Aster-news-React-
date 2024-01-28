@@ -3,6 +3,7 @@ import { useFetchNewsBySearch } from "@/hooks/useFetch";
 import { useClickAway } from "@uidotdev/usehooks";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
 const { Search } = Input;
 
 function FormSearch() {
@@ -33,7 +34,7 @@ function FormSearch() {
   return (
     <div className="flex ">
       <Space
-        className="lg:w-[300px] md:ml-16 md:w-[420px] sm:w-[590px] w-80   flex mb-0"
+        className="lg:w-[300px] md:ml-16 md:w-[360px] sm:w-[500px] w-60   flex mb-0"
         direction="vertical"
       >
         <div className="relative">
@@ -49,8 +50,8 @@ function FormSearch() {
       {isOpen && (
         <ul
           ref={ref}
-          className="bg-white rounded-theme mt-1 p-1 absolute  left-13 top-[54px] z-10 border border-gray-400 divide-y divide-gray-200 text-[14px] w-80 sm:w-[590px] 
-          md:w-[418px] md:left-[71px] lg:w-[300px] lg:left-13"
+          className="bg-white rounded-theme mt-1 p-1 absolute  left-13 top-[54px] z-10 border border-gray-400 divide-y divide-gray-200 text-[14px] w-60 sm:w-[500px] 
+          md:w-[360px] md:left-[71px] lg:w-[300px] lg:left-13"
         >
           {searchRes.length > 0 ? (
             searchRes.map((searchedItem, index) => (

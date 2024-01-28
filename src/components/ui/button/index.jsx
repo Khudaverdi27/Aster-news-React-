@@ -1,6 +1,7 @@
 import classNames from "classnames";
 
 function Button({
+  type,
   disabled = false,
   children,
   property,
@@ -13,6 +14,7 @@ function Button({
 }) {
   return (
     <button
+      type={type ? type : "button"}
       disabled={disabled}
       onClick={onClick}
       className={classNames([

@@ -116,8 +116,8 @@ function ViewPage() {
               fetchComments={fetchComments}
             />
             <div className="bg-[#FFE8C5] mt-12 flex justify-between items-center p-3">
-              <SubscribeEmail flex={true} p={"p-1"} />
-              <figure className="w-[120px] mt-5 lg:mt-0">
+              <SubscribeEmail block={false} flex={true} p={"p-1"} />
+              <figure className="w-[120px]  lg:mt-0">
                 <img src={email} alt="" />
               </figure>
             </div>

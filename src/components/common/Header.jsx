@@ -6,6 +6,7 @@ import FormSearch from "../ui/Form/FormSearch";
 import { getStorage } from "../../storage/storage";
 import ModalForLogin from "../ui/modal";
 import ToggleMenu from "./Navbar/ToggleMenu";
+import FormDarkMode from "../ui/Form/FormDarkMode";
 
 function Header() {
   const token = getStorage("token");
@@ -13,14 +14,16 @@ function Header() {
   return (
     <div
       className="lg:flex lg:justify-between pt-[23px] pb-[40px] top-[-8px] fixed bg-[#F4F9F8]
-   lg:w-[1024px] w-full z-50 left-0 lg:left-[301px] md:left-[240px] md:w-[1024px]"
+   lg:w-[1024px] w-full z-50 left-0 xl:left-[301px] md:left-[240px] md:w-[1024px]"
     >
       <div className="flex w-10 space-x-2 items-center">
         <ToggleMenu />
         <FormSearch />
+        <FormDarkMode />
       </div>
-      <div className="flex items-center sm:justify-center md:justify-normal ml-2  md:ml-16 lg:space-x-5  lg:mt-0 mt-5 lg:justify-between lg:mx-3 justify-between mr-1">
-        <div className="order-1 lg:text-[16px] md:ml-2 text-sm lg:ml-10">
+
+      <div className="flex items-center sm:justify-center md:justify-normal ml-2  md:ml-16 lg:space-x-5  lg:mt-0 mt-1 lg:justify-between lg:mx-3 justify-between mr-1">
+        <div className="order-1 lg:text-[16px] md:ml-2 text-sm lg:ml-10 ">
           {token ? (
             <DropdownMenu
               helperBlock={

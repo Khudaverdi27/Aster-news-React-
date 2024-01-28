@@ -21,6 +21,7 @@ export default {
         '4/3': '4 / 3',
         '3/2': '3 / 2'
       },
+      darkMode: 'class',
     },
   },
   plugins: [],

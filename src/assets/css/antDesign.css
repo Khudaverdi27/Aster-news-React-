@@ -8,3 +8,23 @@
   .ant-form-item-control-input-content .ant-btn{
 @apply bg-skyBlue text-yellow-50
   }
+  .ant-switch{
+    @apply  !bg-amberBlack
+  }
+  .ant-switch::before{
+    @apply text-white ;
+    content: "Light";
+
+  }
+  .ant-switch.ant-switch-checked{
+    @apply !bg-white
+  }
+  .ant-switch.ant-switch-checked:before{
+    content: "Dark";
+    @apply text-amberBlack;
+
+  }
+  .ant-switch-handle::before{
+    @apply border border-skyBlue 
+  }
+  

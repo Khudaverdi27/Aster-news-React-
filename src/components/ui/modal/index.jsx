@@ -4,6 +4,7 @@ import Button from "@/components/ui/button";
 import FormText from "../Form/FormText";
 import { useFetchLoginData } from "../../../hooks/useFetch";
 import { saveStorage } from "../../../storage/storage";
+
 const ModalForLogin = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [email, setEmail] = useState("");
@@ -54,6 +55,7 @@ const ModalForLogin = () => {
       <Button size="sm" rounded={true} border={true} onClick={showModal}>
         Giriş
       </Button>
+
       <Modal
         title={
           <h3 className="font-bold text-[18px] text-center mb-10">
@@ -72,6 +74,7 @@ const ModalForLogin = () => {
           <>
             {" "}
             <FormText
+              block={false}
               value={email}
               placeholder={"Test mail: erna54@hotmail.com"}
               onChange={onChangeEmail}
@@ -83,6 +86,7 @@ const ModalForLogin = () => {
               }
             />
             <FormText
+              block={false}
               value={password}
               placeholder={"Test password: 123"}
               onChange={onChangePassword}

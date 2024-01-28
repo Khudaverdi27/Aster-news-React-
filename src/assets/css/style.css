@@ -1,8 +1,9 @@
 body {
-  @apply bg-[#F4F9F8];
+  @apply bg-[#F4F9F8] overflow-x-hidden;
+  
 }
 .menu-link {
-  @apply flex items-center md:space-x-10 sm:justify-normal mr-2 justify-between w-full lg:space-x-9 space-x-2 text-[17px] ;
+  @apply flex items-center md:space-x-10 sm:justify-normal mr-2 justify-between lg:space-x-9 space-x-2 text-[17px] ;
 }
 .menu-link .active {
   @apply border-b-2 border-skyBlue;
@@ -11,3 +12,7 @@ body {
   @apply px-[15px] py-[14px] rounded-theme;
 }
 
+.ant-dropdown{
+  inset: 0 3px auto auto !important;
+  @apply top-[100px] lg:top-[50px] !important
+}

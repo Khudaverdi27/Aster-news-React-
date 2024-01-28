@@ -27,9 +27,9 @@ const handleClick = (i) => {
 
 const DropdownMenu = ({ children, helperBlock }) => (
   <Dropdown
-    className="cursor-pointer"
+    className="cursor-pointer !right-[20px]"
     overlay={
-      <Menu>
+      <Menu className="">
         {helperBlock}
         {items.map((menu, index) => (
           <Menu.Item onClick={() => handleClick(menu)} key={index}>

@@ -1,6 +1,6 @@
 import FormText from "../../ui/Form/FormText";
 import Button from "@/components/ui/button";
-function SubscribeEmail({ flex, p, block, className }) {
+function SubscribeEmail({ flex, p, className }) {
   return (
     <>
       <div
@@ -16,15 +16,12 @@ function SubscribeEmail({ flex, p, block, className }) {
         <div
           className={`space-y-3 ${flex ? "flex items-center space-x-3 " : ""}`}
         >
-          <FormText type={"email"} padding={p} placeholder={"Email daxil et"} />
-          <Button
-            block={block}
-            padding={true}
-            rounded={"rounded-theme"}
-            property={"sky-blue"}
-          >
-            Abunə ol
-          </Button>
+          <FormText
+            block={true}
+            type={"email"}
+            padding={p}
+            placeholder={"Email daxil et"}
+          />
         </div>
       </div>
     </>
