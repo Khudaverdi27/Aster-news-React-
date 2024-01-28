@@ -5,12 +5,12 @@ import AboutPage from "../pages/about";
 
 function AboutLayout() {
   return (
-    <>
+    <div>
       <Logo />
       <Header />
       <AboutPage />
       <Footer />
-    </>
+    </div>
   );
 }
 

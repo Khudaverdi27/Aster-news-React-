@@ -37,7 +37,7 @@ function NewsCommetnForm({ id, fetchComments }) {
         ></textarea>
 
         {!token && (
-          <p className="text-red-500 text-sm">
+          <p className="text-orange-500 text-sm">
             Comment yazmaq üçün hesabınıza giriş etməlisiniz...
           </p>
         )}

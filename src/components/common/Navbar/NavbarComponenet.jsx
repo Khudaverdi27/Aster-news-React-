@@ -45,7 +45,7 @@ function NavbarComponent({ classForResponsive, setOpen }) {
   }, []);
   return (
     <>
-      <div className={`pr-[17px] ${classForResponsive} `}>
+      <div className={`pr-[17px] ${classForResponsive} sticky inset-0`}>
         <div className="hidden lg:inline-block md:inline-block md:mt-5 lg:mt-0">
           <Logo />
         </div>

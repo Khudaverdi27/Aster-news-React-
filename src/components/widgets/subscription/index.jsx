@@ -6,7 +6,7 @@ function Subscription({ className }) {
   const [text, setText] = useState("Yüksəlt");
   return (
     <div
-      className={`bg-skyBlue rounded-theme text-white ml-[16px] hidden lg:block ${
+      className={`bg-skyBlue rounded-theme text-white ml-[16px] mr-3 hidden md:block lg:block ${
         className ? className : ""
       } p-[20px]`}
     >

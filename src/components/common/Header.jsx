@@ -19,7 +19,7 @@ function Header() {
         <ToggleMenu />
         <FormSearch />
       </div>
-      <div className="flex items-center sm:justify-center md:justify-normal  ml-1 md:ml-16 lg:space-x-5  lg:mt-0 mt-5 lg:justify-between lg:mx-3 ">
+      <div className="flex items-center sm:justify-center md:justify-normal ml-2  md:ml-16 lg:space-x-5  lg:mt-0 mt-5 lg:justify-between lg:mx-3 justify-between mr-1">
         <div className="order-1 lg:text-[16px] md:ml-2 text-sm lg:ml-10">
           {token ? (
             <DropdownMenu

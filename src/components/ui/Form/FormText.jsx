@@ -13,6 +13,8 @@ function FormText({
         <p className="font-bold ">{labelName}</p>
         <div className={`${!labelName ? "w-full " : ""} `}>
           <input
+            autoCapitalize="off"
+            autoCorrect="off"
             value={value}
             onChange={onChange}
             className={`${
