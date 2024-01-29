@@ -17,12 +17,12 @@ const ToggleMenu = () => {
     setOpen(false);
   };
   return (
-    <div className="block lg:hidden md:hidden ">
+    <div className="block lg:hidden md:hidden dark:bg-amberBlack">
       <Button type="primary" onClick={showDrawer}>
-        <FaBars className="text-gray-500" />
+        <FaBars className="text-gray-500 dark:text-white" />
       </Button>
       <Drawer
-        className="h-full"
+        className="h-full dark:bg-[#22303c]"
         title={
           <div className="flex justify-between">
             <Logo />{" "}

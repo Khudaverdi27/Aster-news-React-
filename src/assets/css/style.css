@@ -13,9 +13,9 @@ body {
 }
 
 label{
-  @apply dark:bg-amberBlack dark:!text-white
+  @apply dark:bg-[#22303c] dark:!text-white
 }
 
 .darkMode{
-  @apply dark:bg-amberBlack dark:text-white dark:shadow-md
+  @apply dark:bg-[#22303c] dark:text-white dark:shadow-md
 }

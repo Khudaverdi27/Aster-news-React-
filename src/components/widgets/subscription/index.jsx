@@ -16,7 +16,7 @@ function Subscription({ className }) {
         <span> Premiuma abunə ol</span>
       </div>
       <div className="flex items-center justify-between">
-        <span className="text-[30px]">
+        <span className="text-[22px]">
           $8 <small className="text-[15px]">/a</small>
         </span>
         <Button

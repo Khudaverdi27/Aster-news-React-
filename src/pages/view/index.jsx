@@ -115,7 +115,7 @@ function ViewPage() {
               id={slugNews.id}
               fetchComments={fetchComments}
             />
-            <div className="bg-[#FFE8C5] darkMode mt-12 flex justify-between items-center p-3">
+            <div className="bg-[#FFE8C5] dark:bg-amberBlack mt-12 flex justify-between items-center p-3">
               <SubscribeEmail block={false} flex={true} p={"p-1"} />
               <figure className="w-[120px]  lg:mt-0">
                 <img src={email} alt="" />

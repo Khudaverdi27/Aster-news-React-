@@ -21,8 +21,11 @@ export default {
       aspectRatio: {
         '4/3': '4 / 3',
         '3/2': '3 / 2'
+      },
+      backgroundImage: {
+        'night': "url('https://freesvg.org/storage/img/thumb/crescent.png')",
+        'day': "url('https://www.svgrepo.com/show/78390/sun.svg')",
       }
-     
     },
   },
   plugins: [],

@@ -2,38 +2,40 @@
     @apply bg-[#ECF5F8]
 }
 .ant-modal-content{
-  @apply dark:!bg-amberBlack dark:text-white dark:shadow-md
+  @apply dark:!bg-[#22303c] dark:text-white dark:shadow-md
 }
   .ant-modal .ant-btn{
-    @apply border border-skyBlue  dark:!bg-amberBlack dark:text-white text-black
+    @apply border border-skyBlue  dark:!bg-[#22303c] dark:text-white text-black
   
   }
 
   .ant-dropdown{
     inset: 0 3px auto auto !important;
-    @apply top-[100px] lg:top-[50px] !important
+    @apply !top-[100px] lg:!top-[50px] fixed
   }
   .ant-form-item-control-input-content .ant-btn{
   @apply bg-skyBlue text-yellow-50
   }
   .ant-switch{
-    @apply  !bg-amberBlack
-  }
-  .ant-switch::before{
-    @apply text-white ;
-    content: "Light";
-
-  }
-  .ant-switch.ant-switch-checked{
     @apply !bg-white
   }
-  .ant-switch.ant-switch-checked:before{
+  .ant-switch::before{
     content: "Dark";
-    @apply text-amberBlack;
-
+    @apply text-[#22303c] ;
+  }
+  .ant-switch.ant-switch-checked{
+    @apply !bg-[#22303c] 
+  }
+  .ant-switch.ant-switch-checked:before{
+    @apply text-white ;
+    content: "Light";
   }
   .ant-switch-handle::before{
-    @apply border border-skyBlue 
+    @apply border border-yellow-400 bg-day bg-center bg-contain bg-no-repeat
+  }
+  .ant-switch.ant-switch-checked .ant-switch-handle::before{
+    @apply border border-black bg-night bg-center bg-contain bg-no-repeat		 
+    
   }
   .ant-select{
     @apply dark:!bg-[#ECF5F8] dark:text-white dark:shadow-md

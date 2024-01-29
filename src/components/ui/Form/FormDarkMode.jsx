@@ -8,7 +8,7 @@ function FormDarkMode() {
     <Form.Item className="mb-0" valuePropName="checked">
       <Switch
         onChange={handleChange}
-        className="w-[75px] !outline font-bold !outline-1 !outline-amberBlack"
+        className="w-[75px] !outline font-bold !outline-1 !outline-skyBlue"
       />
     </Form.Item>
   );
