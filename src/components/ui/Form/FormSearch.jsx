@@ -32,9 +32,9 @@ function FormSearch() {
   }, [text]);
 
   return (
-    <div className="flex ">
+    <div className="flex">
       <Space
-        className="lg:w-[300px] md:ml-16 md:w-[360px] sm:w-[500px] w-60   flex mb-0"
+        className="lg:w-[300px] md:ml-16 md:w-[360px] sm:w-[500px] w-[235px]   flex mb-0"
         direction="vertical"
       >
         <div className="relative">
@@ -50,7 +50,7 @@ function FormSearch() {
       {isOpen && (
         <ul
           ref={ref}
-          className="bg-white rounded-theme mt-1 p-1 absolute  left-13 top-[54px] z-10 border border-gray-400 divide-y divide-gray-200 text-[14px] w-60 sm:w-[500px] 
+          className="bg-white rounded-theme mt-1 p-1 absolute  left-13 top-[54px] z-10 border border-gray-400 divide-y divide-gray-200 text-[14px] w-[235px] sm:w-[500px] 
           md:w-[360px] md:left-[71px] lg:w-[300px] lg:left-13 darkMode"
         >
           {searchRes.length > 0 ? (

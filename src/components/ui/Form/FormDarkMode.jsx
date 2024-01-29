@@ -5,7 +5,7 @@ function FormDarkMode() {
   const { handleChange } = useDarkMode();
 
   return (
-    <Form.Item className="mb-0" valuePropName="checked">
+    <Form.Item className="mb-0 !mr-1" valuePropName="checked">
       <Switch
         onChange={handleChange}
         className="w-[75px] !outline font-bold !outline-1 !outline-skyBlue"
