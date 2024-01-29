@@ -46,7 +46,7 @@ function ViewPage() {
   };
 
   return (
-    <div className="lg:mt-24 mt-[150px]  px-3">
+    <div className="lg:mt-24 mt-[150px]  px-3 ">
       {slugLoading ? (
         <div className="flex items-center justify-center min-h-80">
           <Spin size="large" />
@@ -115,7 +115,7 @@ function ViewPage() {
               id={slugNews.id}
               fetchComments={fetchComments}
             />
-            <div className="bg-[#FFE8C5] mt-12 flex justify-between items-center p-3">
+            <div className="bg-[#FFE8C5] darkMode mt-12 flex justify-between items-center p-3">
               <SubscribeEmail block={false} flex={true} p={"p-1"} />
               <figure className="w-[120px]  lg:mt-0">
                 <img src={email} alt="" />

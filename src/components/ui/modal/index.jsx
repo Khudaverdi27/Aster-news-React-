@@ -58,7 +58,7 @@ const ModalForLogin = () => {
 
       <Modal
         title={
-          <h3 className="font-bold text-[18px] text-center mb-10">
+          <h3 className="font-bold text-[18px] darkMode text-center mb-10">
             Hesabınıza giriş edin
           </h3>
         }

@@ -1,12 +1,20 @@
-.ant-input{
+  .ant-input{
     @apply bg-[#ECF5F8]
 }
-.ant-modal .ant-btn{
-    @apply border border-skyBlue text-black
+.ant-modal-content{
+  @apply dark:!bg-amberBlack dark:text-white dark:shadow-md
+}
+  .ant-modal .ant-btn{
+    @apply border border-skyBlue  dark:!bg-amberBlack dark:text-white text-black
   
   }
+
+  .ant-dropdown{
+    inset: 0 3px auto auto !important;
+    @apply top-[100px] lg:top-[50px] !important
+  }
   .ant-form-item-control-input-content .ant-btn{
-@apply bg-skyBlue text-yellow-50
+  @apply bg-skyBlue text-yellow-50
   }
   .ant-switch{
     @apply  !bg-amberBlack
@@ -27,4 +35,9 @@
   .ant-switch-handle::before{
     @apply border border-skyBlue 
   }
-  
+  .ant-select{
+    @apply dark:!bg-[#ECF5F8] dark:text-white dark:shadow-md
+  }
+  .ant-input-search-button{
+    @apply dark:!bg-[#ECF5F8] dark:text-white
+  }

@@ -24,7 +24,7 @@ function SliderCard({ className }) {
   };
   return (
     <div
-      className={`right-section-cards space-y-[13px]  bg-white shadow-theme max-w-[355px] 
+      className={`right-section-cards darkMode space-y-[13px]  bg-white shadow-theme max-w-[355px] 
       min-w-full ${className}`}
     >
       <div className="flex justify-between border-b pb-2">

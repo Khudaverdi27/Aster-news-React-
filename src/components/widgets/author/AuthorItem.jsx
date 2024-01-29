@@ -6,7 +6,7 @@ function AuthorItem({ item }) {
     window.scrollTo(0, 0);
   };
   return (
-    <article className="bg-white shadow-theme p-[13px] lg:w-[132px] min-w-[107px] h-[190px] flex flex-col justify-between">
+    <article className="bg-white darkMode shadow-theme p-[13px] lg:w-[132px] min-w-[107px] h-[190px] flex flex-col justify-between">
       <figure className="size-[70px] rounded-full mx-auto overflow-hidden">
         <img src={item.photo} alt="" className="img-cover" />
       </figure>

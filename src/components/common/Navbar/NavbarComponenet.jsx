@@ -45,7 +45,9 @@ function NavbarComponent({ classForResponsive, setOpen }) {
   }, []);
   return (
     <>
-      <div className={`pr-[17px] ${classForResponsive} sticky inset-0`}>
+      <div
+        className={`pr-[17px] ${classForResponsive} sticky inset-0 darkMode`}
+      >
         <div className="hidden lg:inline-block md:inline-block md:mt-5 lg:mt-0">
           <Logo />
         </div>
@@ -58,8 +60,8 @@ function NavbarComponent({ classForResponsive, setOpen }) {
                 onClick={setOpen ? () => setOpen(false) : ""}
                 to={"/search/" + category.slug}
                 className={classNames({
-                  "flex items-center h-[50px] rounded-tr-full relative rounded-br-full pl-[33px] text-amberBlack space-x-[22px]": true,
-                  "bg-[#e0f0f8] text-skyBlue font-bold after:content-[''] after:absolute after:left-[15px] after:size-2 after:rounded-full after:bg-skyBlue":
+                  "flex items-center h-[50px] darkMode rounded-tr-full relative rounded-br-full pl-[33px] text-amberBlack space-x-[22px]": true,
+                  "bg-[#e0f0f8] text-skyBlue font-bold after:content-[''] after:absolute after:left-[15px] after:size-2 dark:bg-sky-900 after:rounded-full after:bg-skyBlue":
                     params === category.slug,
                 })}
               >

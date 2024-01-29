@@ -7,7 +7,7 @@ function NewsItem({ item }) {
     window.scrollTo(0, 0);
   };
   return (
-    <article className="bg-white p-[17px] shadow-theme rounded-theme ">
+    <article className="bg-white darkMode p-[17px] shadow-theme rounded-theme ">
       <Link onClick={handleLinkClick} to={`/view/${item.slug}`}>
         <div className="flex space-x-[15px]">
           <div>

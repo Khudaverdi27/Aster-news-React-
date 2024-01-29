@@ -17,9 +17,9 @@ function RightAside({ visible }) {
 
   return (
     <aside
-      className={`space-y-[15px] lg:mt-24 mb-6 md:max-w-[200px] lg:max-w-[364px] min-w-full ${visible} `}
+      className={`space-y-[15px]  lg:mt-24 mb-6 md:max-w-[200px] lg:max-w-[364px] min-w-full ${visible} `}
     >
-      <div className="right-section-cards  bg-white shadow-theme ">
+      <div className="right-section-cards darkMode bg-white shadow-theme ">
         {weatherLoading ? (
           <NewsSkleton image={false} />
         ) : (
@@ -68,7 +68,7 @@ function RightAside({ visible }) {
           </>
         )}
       </div>
-      <div className="right-section-cards  bg-white shadow-theme">
+      <div className="right-section-cards darkMode bg-white shadow-theme">
         <div className="flex items-center space-x-[12px] mb-3">
           <span className="size-[24px]">
             <FiFeather className="size-full" />

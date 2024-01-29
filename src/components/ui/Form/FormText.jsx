@@ -42,7 +42,7 @@ function FormText({
               onChange={onChange}
               className={`${
                 labelName ? "lg:w-[385px] w-[270px]  " : "w-full "
-              } outline-none border border-gray-400 ${padding} rounded-theme shrink-0`}
+              } outline-none border border-gray-400 ${padding} rounded-theme shrink-0 text-black`}
               placeholder={placeholder}
               type={type}
             />

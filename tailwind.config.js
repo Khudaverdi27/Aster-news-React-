@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -20,8 +21,8 @@ export default {
       aspectRatio: {
         '4/3': '4 / 3',
         '3/2': '3 / 2'
-      },
-      darkMode: 'class',
+      }
+     
     },
   },
   plugins: [],

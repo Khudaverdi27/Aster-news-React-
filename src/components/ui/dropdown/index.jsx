@@ -27,13 +27,13 @@ const handleClick = (i) => {
 
 const DropdownMenu = ({ children, helperBlock }) => (
   <Dropdown
-    className="cursor-pointer !right-[20px]"
+    className="cursor-pointer !right-[20px] "
     overlay={
-      <Menu className="">
+      <Menu className="darkMode">
         {helperBlock}
         {items.map((menu, index) => (
           <Menu.Item onClick={() => handleClick(menu)} key={index}>
-            <button className="flex items-center space-x-[10px] text-[16px]">
+            <button className="flex darkMode items-center space-x-[10px] text-[16px]">
               <span>{menu.icon}</span>
               <span> {menu.label}</span>
             </button>

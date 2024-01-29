@@ -14,7 +14,7 @@ function Header() {
   return (
     <div
       className="lg:flex lg:justify-between pt-[23px] pb-[40px] top-[-8px] fixed bg-[#F4F9F8]
-   lg:w-[1024px] w-full z-50 left-0 xl:left-[301px] md:left-[240px] md:w-[1024px]"
+   lg:w-[1024px] w-full z-50 left-0 xl:left-[301px] md:left-[240px] md:w-[1024px] darkMode"
     >
       <div className="flex w-10 space-x-2 items-center">
         <ToggleMenu />
@@ -22,7 +22,7 @@ function Header() {
         <FormDarkMode />
       </div>
 
-      <div className="flex items-center sm:justify-center md:justify-normal ml-2  md:ml-16 lg:space-x-5  lg:mt-0 mt-1 lg:justify-between lg:mx-3 justify-between mr-1">
+      <div className="flex items-center sm:justify-center md:justify-normal ml-2  md:ml-16 lg:space-x-5  lg:mt-0 mt-1 lg:justify-between lg:mx-3 justify-between mr-1 ">
         <div className="order-1 lg:text-[16px] md:ml-2 text-sm lg:ml-10 ">
           {token ? (
             <DropdownMenu

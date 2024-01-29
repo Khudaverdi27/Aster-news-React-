@@ -6,7 +6,7 @@ function ContactPage() {
   return (
     <>
       <Col
-        className="lg:mt-5 mt-[150px] px-2 overflow-hidden"
+        className="lg:mt-5 mt-[150px] px-2 overflow-hidden "
         xs={24}
         sm={24}
         md={12}

@@ -1,10 +1,9 @@
 import FormText from "../../ui/Form/FormText";
-import Button from "@/components/ui/button";
 function SubscribeEmail({ flex, p, className }) {
   return (
     <>
       <div
-        className={`${
+        className={`darkMode ${
           flex
             ? `right-section-cards space-y-3 text-[15px] `
             : `bg-white p-3 ${className} lg:max-w-[364px] min-w-full mt-5`

@@ -4,11 +4,14 @@ import "./assets/css/index.css";
 import GlobalProvider from "./providers/GlobalProvider";
 import { BrowserRouter } from "react-router-dom";
 import NotifyProvider from "./context/notification";
+import DarkModeProvider from "./context/DarkMode";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <NotifyProvider>
-      <GlobalProvider />
-    </NotifyProvider>
+    <DarkModeProvider>
+      <NotifyProvider>
+        <GlobalProvider />
+      </NotifyProvider>
+    </DarkModeProvider>
   </BrowserRouter>
 );
