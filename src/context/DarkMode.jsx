@@ -6,18 +6,21 @@ const Theme = createContext();
 const DarkModeProvider = ({ children }) => {
   const mode = getStorage("theme");
   useEffect(() => {
-    const isDarkMode = mode === "dark";
+    if (mode === "dark") {
+      document.documentElement.classList.add("dark");
+      document.body.classList.add("darkMode");
+    }
+  }, [mode]);
 
-    document.documentElement.classList.toggle("dark", isDarkMode);
-    document.body.classList.toggle("darkMode", isDarkMode);
-  }, []);
-
-  const handleChange = (checked) => {
-    const theme = checked ? "dark" : "light";
-    saveStorage("theme", theme);
-
-    document.documentElement.classList.toggle("dark", checked);
-    document.body.classList.toggle("darkMode", checked);
+  const handleChange = () => {
+    const isDarkMode = document.documentElement.classList.toggle("dark");
+    if (isDarkMode) {
+      document.body.classList.add("darkMode");
+      saveStorage("theme", "dark");
+    } else {
+      document.body.classList.remove("darkMode");
+      removeStorage("theme");
+    }
   };
 
   const styles = {

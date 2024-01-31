@@ -32,7 +32,7 @@ function NewsCommetnForm({ id, fetchComments }) {
             setComment(e.target.value.trim());
           }}
           placeholder="commentini buraya əlavə et..."
-          className="w-full rounded-theme bg-[#ECF5F8] px-[18px] py-[12px] resize-none outline-none placeholder:text-[#a7b9c4] disabled:opacity-50"
+          className="w-full rounded-theme bg-[#ECF5F8] px-[18px] py-[12px] resize-none outline-none placeholder:text-[#a7b9c4] disabled:opacity-50 dark:!text-black"
           rows="5"
         ></textarea>
 
