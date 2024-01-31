@@ -5,7 +5,7 @@ import { LuAlarmClock } from "react-icons/lu";
 
 function AboutPage() {
   return (
-    <section className=" bg-stone-100 font-poppins darkMode sm:mt-0 ">
+    <section className="  font-poppins darkMode sm:mt-0 ">
       <div className="max-w-6xl py-4 mx-auto lg:py-6 md:px-6 mt-24">
         <div className="flex flex-wrap ">
           <div className="w-full px-4 mb-10 lg:w-1/2 lg:mb-0 ">

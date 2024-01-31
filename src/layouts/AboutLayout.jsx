@@ -6,7 +6,7 @@ import AboutPage from "../pages/about";
 function AboutLayout() {
   return (
     <div className="relative">
-      <span className="fixed top-0 darkMode w-full z-[50]">
+      <span className="fixed top-0 bg-[#F4F9F8] darkMode w-full z-[50]">
         <Logo />
       </span>
       <Header />
