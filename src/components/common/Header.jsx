@@ -13,7 +13,7 @@ function Header() {
   const user = getStorage("user");
   return (
     <div
-      className="lg:flex lg:justify-between pt-[23px] pb-[40px] top-[-8px] fixed bg-[#F4F9F8]
+      className="lg:flex lg:justify-between pt-[23px] pb-[42px] top-[-8px] fixed bg-[#F4F9F8]
    lg:w-[1024px] w-full z-50 left-0 xl:left-[301px] md:left-[240px] md:w-[1024px] darkMode"
     >
       <div className="flex space-x-2 items-center mb-4 lg:mb-0 justify-between w-full ">

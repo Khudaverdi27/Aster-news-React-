@@ -5,8 +5,10 @@ import AboutPage from "../pages/about";
 
 function AboutLayout() {
   return (
-    <div>
-      <Logo />
+    <div className="relative">
+      <span className="fixed top-0 darkMode w-full z-[50]">
+        <Logo />
+      </span>
       <Header />
       <AboutPage />
       <Footer />
