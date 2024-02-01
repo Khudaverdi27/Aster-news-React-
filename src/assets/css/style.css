@@ -19,3 +19,15 @@ label{
 .darkMode{
   @apply dark:bg-[#22303c] dark:text-white dark:shadow-md
 }
+
+::-webkit-scrollbar {
+ @apply dark:bg-[#22303c]
+}
+
+::-webkit-scrollbar-track {
+  @apply  dark:bg-[#2c363f]
+}
+
+::-webkit-scrollbar-thumb {
+  @apply dark:bg-amberBlack border rounded-full
+}
