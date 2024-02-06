@@ -40,6 +40,13 @@
   .ant-select{
     @apply dark:!bg-[#ECF5F8] dark:text-white dark:shadow-md
   }
+  .ant-select-dropdown{
+    @apply dark:!bg-gray-600
+  }
+
   .ant-input-search-button{
-    @apply dark:!bg-[#ECF5F8] dark:text-white
+    @apply dark:!bg-gray-600 dark:!text-white
+  }
+  .ant-input{
+    @apply dark:!bg-gray-600 dark:text-white
   }

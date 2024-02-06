@@ -42,7 +42,7 @@ function FormSearch() {
           {searchLoading && (
             <Spin
               size="small"
-              className="absolute top-[8px] right-[10px] bg-[#EFF4F3] z-20"
+              className="absolute top-[8px] right-[10px] dark:bg-gray-600 bg-[#EFF4F3] z-20"
             />
           )}
         </div>

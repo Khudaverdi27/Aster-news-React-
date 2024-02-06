@@ -34,12 +34,17 @@ function ContactForm() {
   const prefixSelector = (
     <Form.Item name="prefix" noStyle>
       <Select
+        className=" dark:!bg-gray-600 dark:text-white dark:h-[30px] dark:border-gray-600 dark:rounded-md"
         style={{
           width: 70,
         }}
       >
-        <Option value="86">+994</Option>
-        <Option value="87">+90</Option>
+        <Option className=" dark:!bg-gray-600 dark:text-white " value="86">
+          +994
+        </Option>
+        <Option className=" dark:!bg-gray-600 dark:text-white" value="87">
+          +90
+        </Option>
       </Select>
     </Form.Item>
   );
