@@ -17,9 +17,10 @@ const ToggleMenu = () => {
     setOpen(false);
   };
 
-  if (open && isMobile) {
-    document.querySelector("body").classList.add("overflow-y-hidden");
-  }
+  // hide scrolling when drawer is opened
+  document
+    .querySelector("body")
+    .classList.toggle("overflow-y-hidden", open && isMobile);
 
   return (
     <div className="block lg:hidden md:hidden dark:bg-amberBlack ">
